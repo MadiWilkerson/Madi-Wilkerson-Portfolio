@@ -12,7 +12,7 @@
 }
 
 .link {
-  font-size: clamp(1.35rem, 2.78vw, 2.5rem);
+  font-size: clamp(1.1rem, 2vw, 1.65rem);
   font-weight: 500;
   line-height: var(--leading-display);
   text-decoration: none;

@@ -111,7 +111,7 @@
 }
 
 .caption {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.9rem, 1.65vw, 1.05rem);
   font-weight: 600;
   text-align: center;
   margin: 0;
@@ -123,7 +123,7 @@
   max-width: 79ch;
   margin: 0 auto 1rem;
   text-align: center;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.9rem, 1.55vw, 1.02rem);
   color: var(--color-maroon);
 }
 
@@ -156,7 +156,7 @@ code {
 .placeholderNote {
   max-width: 79ch;
   margin: 0 auto 1.25rem;
-  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.9rem, 1.55vw, 1.02rem);
   color: var(--color-maroon);
   line-height: 1.4;
 }
@@ -170,7 +170,7 @@ code {
 
 .backsLead {
   margin: 0 0 1.25rem;
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-size: clamp(1rem, 1.65vw, 1.15rem);
   font-weight: 600;
   text-align: center;
   color: var(--color-maroon);
@@ -198,7 +198,7 @@ code {
 }
 
 .backsCaption {
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-size: clamp(0.85rem, 1.45vw, 0.98rem);
   font-weight: 600;
   text-align: center;
   margin: 0.5rem 0 0;

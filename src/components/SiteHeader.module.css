@@ -24,12 +24,12 @@
     clamp(2rem, 5.5vw, 5rem);
 }
 
+/* Inner pages: powder band only — logo mark is fixed to viewport top-right */
 .header[data-variant='inner'] .inner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
   min-height: var(--header-h-inner);
-  padding: 2rem var(--page-padding-x) 1.25rem;
+  padding: 0;
+  max-width: none;
+  pointer-events: none;
 }
 
 .logoHome {
@@ -45,20 +45,19 @@
   object-fit: contain;
 }
 
-.logoLink {
+.header[data-variant='inner'] .logoLink {
+  position: fixed;
+  z-index: 40;
+  top: calc(var(--header-corner-gutter) + env(safe-area-inset-top, 0px));
+  right: calc(var(--header-corner-gutter) + env(safe-area-inset-right, 0px));
+  left: auto;
   display: block;
   line-height: 0;
-  max-width: min(301px, 52vw);
-  flex-shrink: 0;
+  max-width: min(301px, 42vw);
+  pointer-events: auto;
 }
 
 .logoHeaderImg {
   width: 100%;
   height: auto;
-}
-
-@media (min-width: 900px) {
-  .header[data-variant='inner'] .inner {
-    padding-right: clamp(1rem, 1.8vw, 1.625rem);
-  }
 }

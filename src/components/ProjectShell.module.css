@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-size: clamp(1.75rem, 3.33vw, 3rem);
+  font-size: clamp(1.5rem, 2.85vw, 2.65rem);
   font-weight: 700;
   line-height: var(--leading-display);
   text-align: center;
@@ -17,9 +17,9 @@
 }
 
 .intro {
-  font-size: clamp(1.35rem, 2.78vw, 2.5rem);
+  font-size: clamp(1.05rem, 1.95vw, 1.5rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   margin: 0 auto clamp(2rem, 4vw, 3rem);
   max-width: 1279px;
   color: var(--color-maroon);

@@ -13,7 +13,7 @@
   margin: 0 auto;
   max-width: 1283px;
   text-align: center;
-  font-size: clamp(1.5rem, 3.33vw, 3rem);
+  font-size: clamp(1.2rem, 2.65vw, 2.35rem);
   font-weight: 700;
   line-height: var(--leading-display);
   color: var(--color-maroon);

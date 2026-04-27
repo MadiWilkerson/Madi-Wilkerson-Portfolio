@@ -21,17 +21,14 @@
   }
 }
 
-.top {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  width: 100%;
-  max-width: var(--layout-max);
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
-}
-
+/* Same viewport corner as inner-page header logo */
 .brand {
-  max-width: min(301px, 45vw);
+  position: fixed;
+  z-index: 210;
+  top: calc(var(--header-corner-gutter) + env(safe-area-inset-top, 0px));
+  right: calc(var(--header-corner-gutter) + env(safe-area-inset-right, 0px));
+  left: auto;
+  max-width: min(301px, 42vw);
   line-height: 0;
 }
 

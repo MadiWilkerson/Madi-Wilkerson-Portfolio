@@ -5,12 +5,11 @@
   --menu-line-thickness: 2px;
   /* Axis-aligned box for two length-W strokes at ±45° ≈ W/√2; pad for stroke thickness */
   --menu-open-size: calc(var(--menu-line-w) * 0.707 + var(--menu-line-thickness) * 2);
-  --menu-gutter: clamp(0.45rem, 2.2vw, 0.7rem);
 
   position: fixed;
   z-index: 250;
-  left: calc(var(--menu-gutter) + env(safe-area-inset-left, 0px));
-  top: calc(var(--menu-gutter) + env(safe-area-inset-top, 0px));
+  left: calc(var(--header-corner-gutter) + env(safe-area-inset-left, 0px));
+  top: calc(var(--header-corner-gutter) + env(safe-area-inset-top, 0px));
   padding: 0.15rem;
   line-height: 0;
   color: var(--color-maroon);
@@ -89,7 +88,6 @@
 @media (min-width: 480px) {
   .trigger {
     --menu-line-w: 40px;
-    --menu-gutter: clamp(0.5rem, 2vw, 0.85rem);
   }
 }
 

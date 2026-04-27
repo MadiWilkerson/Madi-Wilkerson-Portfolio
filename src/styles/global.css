@@ -28,6 +28,14 @@
   --grid-gap-home: clamp(1rem, 5.48vw, 4.9375rem);
   --radius-card: 25px;
   --leading-display: 0.82115;
+  /* Same inset as menu control: fixed logo stays aligned on all inner pages */
+  --header-corner-gutter: clamp(0.45rem, 2.2vw, 0.7rem);
+}
+
+@media (min-width: 480px) {
+  :root {
+    --header-corner-gutter: clamp(0.5rem, 2vw, 0.85rem);
+  }
 }
 
 *,
@@ -43,7 +51,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 450;
   line-height: 1.35;
   color: var(--color-maroon);

@@ -17,11 +17,9 @@ export function MenuOverlay({ open, onClose }: Props) {
       aria-modal="true"
       aria-label="Site menu"
     >
-      <div className={styles.top}>
-        <Link to="/" onClick={onClose} className={styles.brand} aria-label="Home">
-          <img src={figma.logoHeader} alt="" className={styles.brandImg} width={301} height={148} />
-        </Link>
-      </div>
+      <Link to="/" onClick={onClose} className={styles.brand} aria-label="Home">
+        <img src={figma.logoHeader} alt="" className={styles.brandImg} width={301} height={148} />
+      </Link>
       <nav className={styles.nav} aria-label="Primary">
         <Link to="/about" className={`${styles.navLink} hover-underline-ltr`} onClick={onClose}>
           About
