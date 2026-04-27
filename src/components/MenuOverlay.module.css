@@ -1,0 +1,73 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-powder);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.closeArea {
+  padding: 0.5rem;
+  opacity: 0.9;
+}
+
+.closeIcon {
+  display: block;
+  transform: rotate(45deg);
+  filter: brightness(0) saturate(100%);
+}
+
+.brand {
+  max-width: 200px;
+  line-height: 0;
+}
+
+.brandImg {
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.navLink {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-maroon);
+  padding: 0.25em 0.5em;
+}
+
+.navLink:hover,
+.navLink:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}

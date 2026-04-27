@@ -1,0 +1,41 @@
+.prose {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0;
+  width: 100%;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+}
+
+.intro {
+  font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  margin: 0 0 2.5rem;
+  max-width: 79ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.45;
+}
+
+.back {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0 1rem 3rem;
+}
+
+.back a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back a:hover,
+.back a:focus-visible {
+  text-decoration: underline;
+}

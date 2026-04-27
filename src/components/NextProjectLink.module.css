@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 0 3rem;
+  max-width: var(--max-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+}
+
+.link {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-maroon);
+}
+
+.link:hover,
+.link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.arrow {
+  font-weight: 400;
+}
