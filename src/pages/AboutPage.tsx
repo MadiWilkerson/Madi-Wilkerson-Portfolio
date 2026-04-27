@@ -14,7 +14,7 @@ export function AboutPage() {
             height={602}
           />
         </div>
-        <h1 className={styles.heading}>Hi — I’m Madi!</h1>
+        <h1 className={styles.heading}>Hi - I’m Madi!</h1>
         <p className={styles.bio}>
           I am currently studying graphic design at the University of Tennessee. While my main goal
           is to work alongside wildlife conservation as a graphic designer, I also enjoy taking care

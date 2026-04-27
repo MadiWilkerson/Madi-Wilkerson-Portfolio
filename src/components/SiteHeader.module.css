@@ -1,45 +1,50 @@
 .header {
   position: relative;
   background: var(--color-powder);
-  min-height: var(--header-h);
+  min-height: var(--header-h-inner);
+}
+
+.header[data-variant='home'] {
+  min-height: var(--header-h-home);
 }
 
 .inner {
-  max-width: 1440px;
+  position: relative;
+  max-width: var(--layout-max);
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 2rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 100%;
+  min-height: inherit;
+  box-sizing: border-box;
 }
 
 .header[data-variant='home'] .inner {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding: clamp(4.5rem, 7.3vw, 6.5625rem) var(--page-padding-x)
+    clamp(2rem, 5.5vw, 5rem);
+}
+
+.header[data-variant='inner'] .inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-height: var(--header-h-inner);
+  padding: 2rem var(--page-padding-x) 1.25rem;
 }
 
 .menuBtn {
   position: absolute;
-  left: 1.5rem;
-  top: 1.75rem;
+  left: var(--page-padding-x);
+  top: clamp(3.5rem, 5.4vw, 4.875rem);
   z-index: 2;
-}
-
-.header[data-variant='home'] .menuBtn {
-  position: fixed;
-  left: min(1.5rem, 4vw);
-  top: 1.75rem;
 }
 
 .menuLines {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1.3125rem;
   width: 73px;
+  max-width: min(73px, 18vw);
 }
 
 .lineImg {
@@ -53,7 +58,6 @@
   justify-content: center;
   width: 100%;
   max-width: min(755px, 100%);
-  margin-top: 0.5rem;
 }
 
 .logoHomeImg {
@@ -63,10 +67,10 @@
 }
 
 .logoLink {
-  margin-left: auto;
   display: block;
   line-height: 0;
-  max-width: min(220px, 40vw);
+  max-width: min(301px, 52vw);
+  flex-shrink: 0;
 }
 
 .logoHeaderImg {
@@ -76,7 +80,6 @@
 
 @media (min-width: 900px) {
   .header[data-variant='inner'] .inner {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-right: clamp(1rem, 1.8vw, 1.625rem);
   }
 }

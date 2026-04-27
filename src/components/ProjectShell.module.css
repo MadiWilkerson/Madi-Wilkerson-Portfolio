@@ -1,38 +1,43 @@
 .prose {
-  max-width: var(--max-content);
+  max-width: var(--layout-max);
   margin: 0 auto;
-  padding: 1.5rem 1.5rem 0;
+  padding: clamp(2.5rem, 5.6vw, 5.0625rem) var(--page-padding-x) 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.75rem, 3.33vw, 3rem);
   font-weight: 700;
+  line-height: var(--leading-display);
   text-align: center;
-  margin: 0 0 1.5rem;
-  line-height: 1.1;
+  margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 1283px;
+  color: var(--color-maroon);
 }
 
 .intro {
-  font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.35rem, 2.78vw, 2.5rem);
   font-weight: 500;
-  margin: 0 0 2.5rem;
-  max-width: 79ch;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.45;
+  line-height: 1.2;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  max-width: 1279px;
+  color: var(--color-maroon);
+  text-align: left;
 }
 
 .back {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  font-weight: 600;
   margin: 0;
-  padding: 0 1rem 3rem;
+  padding: 0 var(--page-padding-x) clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .back a {
   text-decoration: none;
   font-weight: 600;
+  color: var(--color-maroon);
 }
 
 .back a:hover,

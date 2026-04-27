@@ -4,18 +4,18 @@
  * the site self-contained.
  */
 export const figma = {
-  logoHome: 'https://www.figma.com/api/mcp/asset/7d723871-23c2-46f1-be31-07f1142d3e59',
-  logoHeader: 'https://www.figma.com/api/mcp/asset/6bac1a00-9a29-44bd-8074-772c8de3d880',
-  menuLines: 'https://www.figma.com/api/mcp/asset/06605406-86be-4eb1-bed4-1a9cd1d1afe4',
+  logoHome: 'https://www.figma.com/api/mcp/asset/d90d8292-30d0-4dbb-bab0-336e6e5712a2',
+  logoHeader: 'https://www.figma.com/api/mcp/asset/388cae66-b759-42e3-9ae3-6aca9e59270f',
+  menuLines: 'https://www.figma.com/api/mcp/asset/bd221004-ea55-4094-befe-bb53e318b907',
   aboutPhoto:
-    'https://www.figma.com/api/mcp/asset/7129eb26-27cb-42ae-90e3-bf6ddba4c08c',
-  iconEmail: 'https://www.figma.com/api/mcp/asset/4386bf5c-c611-4445-a7d7-e02cb13b9bf7',
-  iconLinkedin: 'https://www.figma.com/api/mcp/asset/c796bb44-9f95-40c9-bfbb-5caa9071b466',
-  iconInstagram: 'https://www.figma.com/api/mcp/asset/6c1c317b-2068-41fe-9cda-a41946edf2d4',
+    'https://www.figma.com/api/mcp/asset/080019f3-b80e-4567-9588-30585c7737d7',
+  iconEmail: 'https://www.figma.com/api/mcp/asset/5cfb5572-e7b5-49e5-a21a-aa244e5975e3',
+  iconLinkedin: 'https://www.figma.com/api/mcp/asset/066ae891-7891-433b-9cda-bc4e02cb988e',
+  iconInstagram: 'https://www.figma.com/api/mcp/asset/487cb446-0d5f-4735-ac72-0aa34f3adde6',
   clock: {
-    hero: 'https://www.figma.com/api/mcp/asset/ef34c11f-427a-42a0-96a8-761239cd3611',
-    yellow: 'https://www.figma.com/api/mcp/asset/719b7d58-7431-4ff3-8831-3c0ed9aa3ed2',
-    blue: 'https://www.figma.com/api/mcp/asset/626fabb5-19b0-41c3-8288-cbea4c707597',
+    hero: 'https://www.figma.com/api/mcp/asset/fbd8eb09-556d-4926-a978-2da2e598d484',
+    yellow: 'https://www.figma.com/api/mcp/asset/312e189f-c529-421c-b825-39e9cc11e0fe',
+    blue: 'https://www.figma.com/api/mcp/asset/940846bc-c8a9-4d98-9a81-7af82921b545',
   },
   magazine: {
     a: 'https://www.figma.com/api/mcp/asset/69dd9dde-d38c-4097-884c-1c11a8c3dc51',

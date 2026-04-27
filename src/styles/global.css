@@ -4,9 +4,14 @@
   --color-maroon: #64303d;
   --color-text-on-card: #c3dbe7;
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --max-content: 1280px;
-  --header-h: 219px;
+  --max-content: 1284px;
+  --layout-max: 1440px;
+  --header-h-inner: 219px;
+  --header-h-home: clamp(22rem, 52vw, 34.75rem);
+  --page-padding-x: clamp(1rem, 5.44vw, 4.875rem);
+  --grid-gap-home: clamp(1rem, 5.48vw, 4.9375rem);
   --radius-card: 25px;
+  --leading-display: 0.82115;
 }
 
 *,

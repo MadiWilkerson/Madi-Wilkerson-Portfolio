@@ -4,12 +4,18 @@
 
 .top {
   background: var(--color-powder);
-  padding: 2.5rem 1.5rem 4rem;
+  padding: clamp(0.5rem, 2vw, 2.5rem) var(--page-padding-x) clamp(2.5rem, 8vw, 6rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 1.5rem;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  min-height: 0;
+}
+
+@media (min-width: 900px) {
+  .top {
+    min-height: clamp(48rem, 92vw, 83.3125rem);
+  }
 }
 
 .photoFrame {
@@ -19,37 +25,43 @@
   background: #d9d9d9;
   overflow: hidden;
   line-height: 0;
+  margin-top: clamp(0, 2vw, 0.5rem);
 }
 
 .photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 45% 35%;
 }
 
 .heading {
   margin: 0;
-  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-size: clamp(2rem, 3.33vw, 3rem);
   font-weight: 700;
-  max-width: 20ch;
+  line-height: var(--leading-display);
+  color: var(--color-maroon);
+  text-align: center;
+  max-width: 47rem;
 }
 
 .bio {
   margin: 0;
-  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-size: clamp(1.35rem, 2.78vw, 2.5rem);
   font-weight: 500;
-  max-width: 55ch;
+  line-height: 1.2;
+  color: var(--color-maroon);
+  max-width: 947px;
+  width: 100%;
   text-align: left;
-  line-height: 1.45;
 }
 
 .bottom {
-  background: #fff;
-  padding: 3rem 1.5rem 4rem;
+  background: var(--color-ice);
+  padding: clamp(2.5rem, 6vw, 4rem) var(--page-padding-x) clamp(3rem, 8vw, 5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 }
 
 .srConnect {
@@ -64,35 +76,39 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 23.5rem));
   justify-content: center;
-  gap: 1.5rem 2.5rem;
-  max-width: 1100px;
+  gap: clamp(0.75rem, 5.4vw, 4.875rem);
+  width: 100%;
+  max-width: var(--layout-max);
+  box-sizing: border-box;
 }
 
 .socialLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--color-maroon);
+  border-radius: var(--radius-card);
   line-height: 0;
-  border-radius: 1rem;
   transition: transform 0.15s ease, opacity 0.15s ease;
+  box-sizing: border-box;
+  padding: clamp(0.5rem, 3.5vw, 1.5rem);
 }
 
 .socialLink:hover,
 .socialLink:focus-visible {
-  transform: scale(1.04);
+  transform: scale(1.03);
   opacity: 0.95;
   outline: none;
 }
 
 .icon {
-  max-width: min(280px, 30vw);
-  width: 100%;
+  width: 85%;
+  max-width: 288px;
   height: auto;
-}
-
-@media (min-width: 700px) {
-  .icon {
-    max-width: 220px;
-  }
+  object-fit: contain;
 }

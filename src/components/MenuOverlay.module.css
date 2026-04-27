@@ -5,8 +5,9 @@
   background: var(--color-powder);
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: var(--page-padding-x);
   animation: fadeIn 0.2s ease;
+  box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -23,8 +24,8 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 3rem;
+  max-width: var(--layout-max);
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
 }
 
 .closeArea {
@@ -39,7 +40,7 @@
 }
 
 .brand {
-  max-width: 200px;
+  max-width: min(301px, 45vw);
   line-height: 0;
 }
 
@@ -59,11 +60,12 @@
 }
 
 .navLink {
-  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-size: clamp(2.25rem, 8.5vw, 5.5rem);
   font-weight: 700;
+  line-height: var(--leading-display);
   text-decoration: none;
   color: var(--color-maroon);
-  padding: 0.25em 0.5em;
+  padding: 0.2em 0.5em;
 }
 
 .navLink:hover,
