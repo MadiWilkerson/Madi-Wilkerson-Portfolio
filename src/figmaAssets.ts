@@ -35,13 +35,6 @@ export const figma = {
      * and set `windmillMotion` to that path when ready.
      */
     windmillMotion: 'https://www.figma.com/api/mcp/asset/27ddc053-c5d4-4493-ad14-15781643f634',
-    backs: {
-      pb1: 'https://www.figma.com/api/mcp/asset/b14e7775-f37c-43a1-a14a-fdf697a5cf8f',
-      pb2: 'https://www.figma.com/api/mcp/asset/cf3d0e24-9eb0-49ee-a86f-d595af6efeda',
-      pb3: 'https://www.figma.com/api/mcp/asset/73a61743-05a5-487c-8b56-e670e8fdbe29',
-      pb4: 'https://www.figma.com/api/mcp/asset/04734827-5fe0-40ab-b90f-003e66dac488',
-      back: 'https://www.figma.com/api/mcp/asset/9a1be533-252d-4c19-8fad-09b373eadb1c',
-    },
   },
   hotSauce: {
     bottle1: 'https://www.figma.com/api/mcp/asset/9f39046a-4965-4f40-b3df-7ac3eae5631e',

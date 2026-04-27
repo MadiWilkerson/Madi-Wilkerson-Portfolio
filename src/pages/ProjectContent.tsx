@@ -6,13 +6,7 @@ type Props = {
   slug: ProjectSlug
 }
 
-const POSTCARD_BACKS: { src: string; label: string }[] = [
-  { src: figma.postcards.backs.pb1, label: 'Postcard label detail' },
-  { src: figma.postcards.backs.pb2, label: 'Postcard back' },
-  { src: figma.postcards.backs.pb3, label: 'Postcard back typography' },
-  { src: figma.postcards.backs.pb4, label: 'Postcard back' },
-  { src: figma.postcards.backs.back, label: 'Address side' },
-]
+const WINDMILL_MOTION_GIF = '/images/postcards/windmill-motion.gif'
 
 /** Optional stills: export from Figma to `public/images/glue/` with these filenames. */
 const GLUE_OPTIONAL_STILLS: { file: string; alt: string }[] = [
@@ -26,7 +20,7 @@ export function ProjectContent({ slug }: Props) {
     case 'van-gogh-clock':
       return (
         <div className={styles.block}>
-          <div className={styles.wide}>
+          <div className={`${styles.wide} ${styles.clockHero}`}>
             <img
               src={figma.clock.hero}
               alt="Van Gogh themed clock built as a paint palette with paint dollops as numbers"
@@ -82,59 +76,66 @@ export function ProjectContent({ slug }: Props) {
       )
     case 'netherlands-postcards':
       return (
-        <>
-          <div className={styles.postcardsGrid}>
-            {[
-              { src: figma.postcards.amstel, label: 'Amstel River' },
-              { src: figma.postcards.gingerbread, label: 'Gingerbread Houses' },
-              { src: figma.postcards.vangogh, label: 'Van Gogh Museum' },
-              { src: figma.postcards.tulips, label: 'Bollenstreek' },
-              { src: figma.postcards.windmill, label: 'Windmills' },
-              { src: figma.postcards.windmillMotion, label: 'Windmills (motion study)' },
-            ].map((card, i) => (
-              <figure key={i} className={styles.postcardCard}>
+        <div className={styles.postcardsGrid}>
+          {[
+            { src: figma.postcards.amstel, label: 'Amstel River' },
+            { src: figma.postcards.gingerbread, label: 'Gingerbread Houses' },
+            { src: figma.postcards.vangogh, label: 'Van Gogh Museum' },
+            { src: figma.postcards.tulips, label: 'Bollenstreek' },
+            { src: figma.postcards.windmill, label: 'Windmills' },
+            {
+              src: figma.postcards.windmillMotion,
+              label: 'Windmills (motion study)',
+              motionGif: true,
+            },
+          ].map((card, i) => (
+            <figure key={i} className={styles.postcardCard}>
+              {'motionGif' in card && card.motionGif ? (
+                <img
+                  src={WINDMILL_MOTION_GIF}
+                  alt=""
+                  className={styles.postcardImg}
+                  loading="eager"
+                  decoding="async"
+                  onError={(e) => {
+                    const el = e.currentTarget
+                    el.src = card.src
+                    el.onerror = null
+                  }}
+                />
+              ) : (
                 <img src={card.src} alt="" className={styles.postcardImg} />
-                <figcaption className={styles.caption}>{card.label}</figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className={styles.backsSection}>
-            <p className={styles.backsLead}>Postcard backs and printed details</p>
-            <ul className={styles.backsList}>
-              {POSTCARD_BACKS.map((item) => (
-                <li key={item.src} className={styles.backsItem}>
-                  <figure className={styles.backsFigure}>
-                    <img src={item.src} alt="" className={styles.backsImg} />
-                    <figcaption className={styles.backsCaption}>{item.label}</figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
+              )}
+              <figcaption className={styles.caption}>{card.label}</figcaption>
+            </figure>
+          ))}
+        </div>
       )
     case 'elmers-glue-animation':
       return (
         <div className={styles.block}>
           <p className={styles.videoNote}>
-            Add your exported video as <code>public/glue-animation.mp4</code>. Optional poster:{' '}
-            <code>public/glue-animation-poster.jpg</code> (shown before the video loads). Optional
-            stills below: <code>public/images/glue/explosion.jpg</code>,{' '}
-            <code>squiggle.jpg</code>, <code>drip.jpg</code>.
+            Place your main animation file at <code>public/glue-animation.mp4</code> (H.264 MP4).
+            It will autoplay (muted) below; use the controls to pause or scrub. Optional:{' '}
+            <code>public/glue-animation-poster.jpg</code> for the first frame, and stills in{' '}
+            <code>public/images/glue/</code>.
           </p>
           <div className={styles.videoBox}>
             <video
               className={styles.video}
               controls
+              autoPlay
+              muted
+              loop
               playsInline
-              preload="metadata"
+              preload="auto"
               poster="/glue-animation-poster.jpg"
             >
               <source src="/glue-animation.mp4" type="video/mp4" />
             </video>
             <p className={styles.fallbackText}>
-              If the video does not play, add <code>glue-animation.mp4</code> to the{' '}
-              <code>public</code> folder.
+              If you see a blank player, add <code>glue-animation.mp4</code> to the <code>public</code>{' '}
+              folder at the project root (same level as <code>index.html</code>), then refresh.
             </p>
           </div>
           <div className={styles.glueStills}>
