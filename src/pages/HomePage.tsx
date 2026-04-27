@@ -16,7 +16,7 @@ export function HomePage() {
           {homeGrid.map((item) => (
             <li key={item.slug}>
               <Link to={`/project/${item.slug}`} className={styles.card}>
-                {item.label}
+                <span className={styles.cardLabel}>{item.label}</span>
               </Link>
             </li>
           ))}

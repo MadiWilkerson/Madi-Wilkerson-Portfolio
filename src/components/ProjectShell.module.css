@@ -25,22 +25,3 @@
   color: var(--color-maroon);
   text-align: left;
 }
-
-.back {
-  text-align: center;
-  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
-  font-weight: 600;
-  margin: 0;
-  padding: 0 var(--page-padding-x) clamp(2.5rem, 5vw, 3.5rem);
-}
-
-.back a {
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--color-maroon);
-}
-
-.back a:hover,
-.back a:focus-visible {
-  text-decoration: underline;
-}

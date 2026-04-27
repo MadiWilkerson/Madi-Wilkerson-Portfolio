@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import type { ProjectMeta } from '../data/projects'
 import { NextProjectLink } from './NextProjectLink'
 import styles from './ProjectShell.module.css'
@@ -17,9 +16,6 @@ export function ProjectShell({ project, children }: Props) {
       </div>
       {children}
       <NextProjectLink to={project.next.slug} label={project.next.label} />
-      <p className={styles.back}>
-        <Link to="/">← All work</Link>
-      </p>
     </article>
   )
 }

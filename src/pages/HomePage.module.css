@@ -68,9 +68,38 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.cardLabel {
+  position: relative;
+  display: inline-block;
+}
+
+.cardLabel::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.06em;
+  width: 100%;
+  height: max(2px, 0.06em);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .cardLabel::after,
+.card:focus-visible .cardLabel::after {
+  transform: scaleX(1);
+}
+
 .card:hover,
 .card:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(100, 48, 61, 0.25);
   outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardLabel::after {
+    transition-duration: 0.01ms;
+  }
 }
