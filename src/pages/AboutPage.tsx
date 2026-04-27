@@ -28,14 +28,14 @@ export function AboutPage() {
             <a
               href="mailto:mrwilkerson937@gmail.com"
               className={styles.socialLink}
-              aria-label="Email mrwilkerson937@gmail.com"
+              aria-label="Send email to mrwilkerson937@gmail.com"
             >
               <img src={figma.iconEmail} alt="" width={333} height={238} className={styles.icon} />
             </a>
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/madison-wilkerson-40299a272"
+              href="https://www.linkedin.com/in/madison-wilkerson-40299a272/"
               className={styles.socialLink}
               rel="noreferrer"
               target="_blank"
