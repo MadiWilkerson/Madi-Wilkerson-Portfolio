@@ -1,14 +1,17 @@
-/* Fixed in viewport top-left; scales down on small screens. */
+/* Compact fixed control: equal inset from top/left, short CSS bars, X = ±45° at 0.707 × line length. */
 .trigger {
-  --menu-line-w: 73px;
-  --menu-line-gap: 1.3125rem;
-  --menu-open-size: 51.619px;
+  --menu-line-w: 36px;
+  --menu-line-gap: 0.45rem;
+  --menu-line-thickness: 2px;
+  /* Axis-aligned box for two length-W strokes at ±45° ≈ W/√2; pad for stroke thickness */
+  --menu-open-size: calc(var(--menu-line-w) * 0.707 + var(--menu-line-thickness) * 2);
+  --menu-gutter: clamp(0.45rem, 2.2vw, 0.7rem);
 
   position: fixed;
   z-index: 250;
-  left: var(--page-padding-x);
-  top: max(1rem, env(safe-area-inset-top, 0px));
-  padding: 0.25rem;
+  left: calc(var(--menu-gutter) + env(safe-area-inset-left, 0px));
+  top: calc(var(--menu-gutter) + env(safe-area-inset-top, 0px));
+  padding: 0.15rem;
   line-height: 0;
   color: var(--color-maroon);
   overflow: visible;
@@ -18,16 +21,14 @@
   position: relative;
   display: block;
   width: var(--menu-line-w);
-  max-width: min(var(--menu-line-w), 18vw);
-  height: calc(var(--menu-line-gap) + 12px);
+  height: calc(var(--menu-line-gap) + var(--menu-line-thickness) * 2);
   transition:
-    width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stage[data-open] {
   width: var(--menu-open-size);
-  max-width: min(var(--menu-open-size), 14vw);
   height: var(--menu-open-size);
 }
 
@@ -35,12 +36,11 @@
   position: absolute;
   left: 0;
   width: var(--menu-line-w);
-  max-width: 100%;
   transition:
-    top 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    bottom 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    left 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .armTop {
@@ -65,7 +65,7 @@
 .rotateTop,
 .rotateBottom {
   display: block;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform: rotate(0deg);
   transform-origin: center center;
 }
@@ -78,42 +78,25 @@
   transform: rotate(-45deg);
 }
 
-.lineImg {
+.bar {
   display: block;
   width: var(--menu-line-w);
-  max-width: var(--menu-line-w);
-  height: auto;
-  vertical-align: middle;
+  height: var(--menu-line-thickness);
+  background: currentColor;
+  border-radius: 1px;
 }
 
-@media (max-width: 639px) {
+@media (min-width: 480px) {
   .trigger {
-    --menu-line-w: 52px;
-    --menu-line-gap: 0.875rem;
-    --menu-open-size: 36px;
-
-    left: max(0.65rem, env(safe-area-inset-left, 0px));
-    top: max(0.65rem, env(safe-area-inset-top, 0px));
-    padding: 0.15rem;
-  }
-
-  .stage {
-    max-width: min(var(--menu-line-w), 22vw);
-    height: calc(var(--menu-line-gap) + 10px);
-  }
-
-  .lineImg {
-    max-width: min(var(--menu-line-w), 22vw);
+    --menu-line-w: 40px;
+    --menu-gutter: clamp(0.5rem, 2vw, 0.85rem);
   }
 }
 
-@media (min-width: 640px) and (max-width: 899px) {
+@media (min-width: 900px) {
   .trigger {
-    --menu-line-w: 64px;
-    --menu-line-gap: 1.1rem;
-    --menu-open-size: 44px;
-
-    top: max(0.85rem, env(safe-area-inset-top, 0px));
+    --menu-line-w: 44px;
+    --menu-line-gap: 0.5rem;
   }
 }
 

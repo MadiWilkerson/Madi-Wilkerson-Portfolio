@@ -1,9 +1,25 @@
+@font-face {
+  font-family: 'Test Signifier';
+  src: url('/fonts/TestSignifierVF-Roman.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Test Signifier';
+  src: url('/fonts/TestSignifierVF-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --color-powder: #c3dbe7;
   --color-ice: #f5fcff;
   --color-maroon: #64303d;
   --color-text-on-card: #c3dbe7;
-  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-serif: 'Test Signifier', Georgia, 'Times New Roman', serif;
   --max-content: 1284px;
   --layout-max: 1440px;
   --header-h-inner: 219px;
@@ -28,6 +44,7 @@ body {
   margin: 0;
   font-family: var(--font-serif);
   font-size: 1.25rem;
+  font-weight: 450;
   line-height: 1.35;
   color: var(--color-maroon);
   background: var(--color-ice);

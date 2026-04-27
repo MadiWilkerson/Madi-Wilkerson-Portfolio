@@ -6,10 +6,6 @@
 export const figma = {
   logoHome: 'https://www.figma.com/api/mcp/asset/d90d8292-30d0-4dbb-bab0-336e6e5712a2',
   logoHeader: 'https://www.figma.com/api/mcp/asset/388cae66-b759-42e3-9ae3-6aca9e59270f',
-  menuLines: 'https://www.figma.com/api/mcp/asset/bd221004-ea55-4094-befe-bb53e318b907',
-  /** Menu control: Figma “Menu Bar Pop Up” Line 3 & 4 (hamburger + X morph). */
-  menuIconUpper: 'https://www.figma.com/api/mcp/asset/71d7cf48-1f3a-4b2e-9dc7-e6b48b0f41ad',
-  menuIconLower: 'https://www.figma.com/api/mcp/asset/0c357bb2-fc90-4d77-9ee3-63649bc18925',
   aboutPhoto:
     'https://www.figma.com/api/mcp/asset/080019f3-b80e-4567-9588-30585c7737d7',
   iconEmail: 'https://www.figma.com/api/mcp/asset/5cfb5572-e7b5-49e5-a21a-aa244e5975e3',
