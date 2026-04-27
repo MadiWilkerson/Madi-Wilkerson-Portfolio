@@ -1,9 +1,13 @@
-/* Hamburger → X matches Figma Menu Bar Pop Up: two 73px strokes, ±45° when crossed. */
+/* Fixed in viewport top-left; scales down on small screens. */
 .trigger {
+  --menu-line-w: 73px;
+  --menu-line-gap: 1.3125rem;
+  --menu-open-size: 51.619px;
+
   position: fixed;
   z-index: 250;
   left: var(--page-padding-x);
-  top: clamp(3.5rem, 5.4vw, 4.875rem);
+  top: max(1rem, env(safe-area-inset-top, 0px));
   padding: 0.25rem;
   line-height: 0;
   color: var(--color-maroon);
@@ -11,26 +15,27 @@
 }
 
 .stage {
-  --line-gap: 1.3125rem;
   position: relative;
   display: block;
-  width: 73px;
-  max-width: min(73px, 18vw);
-  height: calc(var(--line-gap) + 12px);
+  width: var(--menu-line-w);
+  max-width: min(var(--menu-line-w), 18vw);
+  height: calc(var(--menu-line-gap) + 12px);
   transition:
     width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stage[data-open] {
-  width: 51.619px;
-  max-width: min(51.619px, 14vw);
-  height: 51.619px;
+  width: var(--menu-open-size);
+  max-width: min(var(--menu-open-size), 14vw);
+  height: var(--menu-open-size);
 }
 
 .arm {
   position: absolute;
   left: 0;
+  width: var(--menu-line-w);
+  max-width: 100%;
   transition:
     top 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     bottom 0.45s cubic-bezier(0.4, 0, 0.2, 1),
@@ -53,6 +58,7 @@
   left: 50%;
   top: 50%;
   bottom: auto;
+  width: var(--menu-line-w);
   transform: translate(-50%, -50%);
 }
 
@@ -74,10 +80,41 @@
 
 .lineImg {
   display: block;
-  width: 73px;
-  max-width: 73px;
+  width: var(--menu-line-w);
+  max-width: var(--menu-line-w);
   height: auto;
   vertical-align: middle;
+}
+
+@media (max-width: 639px) {
+  .trigger {
+    --menu-line-w: 52px;
+    --menu-line-gap: 0.875rem;
+    --menu-open-size: 36px;
+
+    left: max(0.65rem, env(safe-area-inset-left, 0px));
+    top: max(0.65rem, env(safe-area-inset-top, 0px));
+    padding: 0.15rem;
+  }
+
+  .stage {
+    max-width: min(var(--menu-line-w), 22vw);
+    height: calc(var(--menu-line-gap) + 10px);
+  }
+
+  .lineImg {
+    max-width: min(var(--menu-line-w), 22vw);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .trigger {
+    --menu-line-w: 64px;
+    --menu-line-gap: 1.1rem;
+    --menu-open-size: 44px;
+
+    top: max(0.85rem, env(safe-area-inset-top, 0px));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
