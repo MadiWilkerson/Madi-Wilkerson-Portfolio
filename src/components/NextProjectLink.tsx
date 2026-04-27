@@ -10,7 +10,7 @@ type Props = {
 export function NextProjectLink({ to, label }: Props) {
   return (
     <div className={styles.wrap}>
-      <Link to={`/project/${to}`} className={styles.link}>
+      <Link to={`/project/${to}`} className={`${styles.link} hover-underline-ltr`}>
         {label}
         <span className={styles.arrow} aria-hidden>
           &nbsp;›

@@ -32,27 +32,6 @@
   padding: 2rem var(--page-padding-x) 1.25rem;
 }
 
-.menuBtn {
-  position: absolute;
-  left: var(--page-padding-x);
-  top: clamp(3.5rem, 5.4vw, 4.875rem);
-  z-index: 2;
-}
-
-.menuLines {
-  display: flex;
-  flex-direction: column;
-  gap: 1.3125rem;
-  width: 73px;
-  max-width: min(73px, 18vw);
-}
-
-.lineImg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .logoHome {
   display: flex;
   justify-content: center;

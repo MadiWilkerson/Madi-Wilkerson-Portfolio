@@ -4,19 +4,12 @@ import styles from './SiteHeader.module.css'
 
 type Props = {
   variant: 'home' | 'inner'
-  onOpenMenu: () => void
 }
 
-export function SiteHeader({ variant, onOpenMenu }: Props) {
+export function SiteHeader({ variant }: Props) {
   return (
     <header className={styles.header} data-variant={variant}>
       <div className={styles.inner}>
-        <button type="button" className={styles.menuBtn} onClick={onOpenMenu} aria-label="Open menu">
-          <span className={styles.menuLines} aria-hidden>
-            <img src={figma.menuLines} alt="" width={73} height={6} className={styles.lineImg} />
-            <img src={figma.menuLines} alt="" width={73} height={6} className={styles.lineImg} />
-          </span>
-        </button>
         {variant === 'home' ? (
           <div className={styles.logoHome} aria-hidden>
             <img

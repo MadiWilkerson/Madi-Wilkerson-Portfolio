@@ -15,8 +15,8 @@ export function HomePage() {
         <ul className={styles.grid}>
           {homeGrid.map((item) => (
             <li key={item.slug}>
-              <Link to={`/project/${item.slug}`} className={styles.card}>
-                <span className={styles.cardLabel}>{item.label}</span>
+              <Link to={`/project/${item.slug}`} className={`${styles.card} home-project-card`}>
+                <span className={`${styles.cardLabel} hover-underline-ltr`}>{item.label}</span>
               </Link>
             </li>
           ))}

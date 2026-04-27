@@ -19,12 +19,7 @@
   color: var(--color-maroon);
   text-align: right;
   max-width: 26.3125rem;
-}
-
-.link:hover,
-.link:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+  display: inline-block;
 }
 
 .arrow {
