@@ -86,7 +86,8 @@
 
 .contact:hover,
 .contact:focus-visible {
-  opacity: 0.82;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
   outline: none;
 }
 

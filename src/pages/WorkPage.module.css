@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11.5rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
   gap: clamp(1rem, 2.5vw, 1.75rem);
   align-items: start;
 }
@@ -87,12 +87,15 @@
 }
 
 .popoverBody {
-  font-size: clamp(0.72rem, 1.95vw, 0.8125rem);
+  font-size: clamp(0.58rem, 1.15vw, 0.65rem);
   font-weight: 400;
-  line-height: 1.38;
+  line-height: 1.32;
   overflow: auto;
   max-height: 100%;
   scrollbar-gutter: stable;
+  column-count: 2;
+  column-gap: 0.55rem;
+  column-fill: auto;
 }
 
 .popoverBody em {
@@ -101,7 +104,7 @@
 
 .label {
   margin: 0;
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-size: clamp(0.65rem, 1.05vw, 0.75rem);
   font-weight: 400;
   line-height: 1.35;
 }
