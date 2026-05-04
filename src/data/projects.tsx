@@ -8,11 +8,14 @@ export type ProjectSlug =
   | 'magazine-spread'
   | 'editorial-illustration'
   | 'bodoni-type-specimen-poster'
+  | 'pearl-jam-poster'
+  | 'smokey-guinness-poster'
   | 'collage'
   | 'netherlands-postcards'
   | 'elmers-glue-animation'
   | 'hot-sauce-bottles'
   | '8-bit-dog-webzine'
+  | 'finventory'
 
 export type ProjectMeta = {
   slug: ProjectSlug
@@ -94,6 +97,28 @@ const bodoniTypeSpecimenIntro = (
   </>
 )
 
+const pearlJamPosterIntro = (
+  <>
+    For the Pearl Jam Poster project, I created a custom poster featuring Pearl Jam, focusing on the
+    band’s lead singer, Eddie Vedder. I based the design on the album <em>Ten</em>, using its recognizable
+    font and color palette to guide the overall look. I aimed to capture the tone and energy of the
+    band while still making the poster feel like my own design. Through composition, typography, and
+    color choices, I created a piece that references the original album while also functioning as a
+    strong standalone poster.
+  </>
+)
+
+const smokeyGuinnessPosterIntro = (
+  <>
+    For the Smokey Guinness Poster project, I designed a custom poster featuring Smokey, the mascot
+    for the University of Tennessee. I illustrated Smokey holding a Guinness and incorporated the slogan
+    “Lovely Day for a Guinness” into the design. I focused on balancing the character with the typography
+    to make sure both the image and the phrase worked together clearly. The goal was to create a playful
+    and recognizable poster by combining a well-known mascot with an established slogan, while keeping
+    the overall composition clean and visually engaging.
+  </>
+)
+
 const collageIntro = (
   <>
     For the Collage project, I was given a stack of magazines and asked to create a composition using
@@ -156,6 +181,18 @@ const eightBitDogWebzineIntro = (
     digital format. By organizing the content clearly and keeping a consistent visual style, I was
     able to translate a print concept into an interactive experience. The goal was to explore how
     editorial design can function in a digital space.
+  </>
+)
+
+const finventoryIntro = (
+  <>
+    For the Finventory project, I created an app centered around a collection of fish that I illustrated
+    and then brought to life through code. I started by drawing a variety of different fish,
+    focusing on giving each one a distinct shape and personality. After that, I coded them to move
+    and swim around the screen, creating a more interactive and animated experience. The motion was an
+    important part of the project, as it helped make the app feel more engaging rather than static.
+    The goal was to combine illustration and basic coding to create something playful, while also
+    exploring how movement can enhance a digital design.
   </>
 )
 
@@ -222,8 +259,24 @@ export const projects: ProjectMeta[] = [
     title: 'Bodoni Type Specimen Poster',
     shortTitle: 'Bodoni Type Specimen Poster',
     coverImage: '/images/work/bodoni-type-specimen-poster.png',
-    next: { slug: 'collage', label: 'Collage' },
+    next: { slug: 'pearl-jam-poster', label: 'Pearl Jam Poster' },
     intro: bodoniTypeSpecimenIntro,
+  },
+  {
+    slug: 'pearl-jam-poster',
+    title: 'Pearl Jam Poster',
+    shortTitle: 'Pearl Jam Poster',
+    coverImage: '/images/work/pearl-jam-poster.png',
+    next: { slug: 'smokey-guinness-poster', label: 'Smokey Guinness Poster' },
+    intro: pearlJamPosterIntro,
+  },
+  {
+    slug: 'smokey-guinness-poster',
+    title: 'Smokey Guinness Poster',
+    shortTitle: 'Smokey Guinness Poster',
+    coverImage: '/images/work/smokey-guinness-poster.png',
+    next: { slug: 'collage', label: 'Collage' },
+    intro: smokeyGuinnessPosterIntro,
   },
   {
     slug: 'collage',
@@ -264,8 +317,16 @@ export const projects: ProjectMeta[] = [
     title: '8-bit Dog Webzine',
     shortTitle: '8-bit Dog Webzine',
     coverVideo: '/video/8-bit-dog-webzine.mp4',
-    next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
+    next: { slug: 'finventory', label: 'Finventory' },
     intro: eightBitDogWebzineIntro,
+  },
+  {
+    slug: 'finventory',
+    title: 'Finventory',
+    shortTitle: 'Finventory',
+    coverVideo: '/video/finventory-recording.mp4',
+    next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
+    intro: finventoryIntro,
   },
 ]
 

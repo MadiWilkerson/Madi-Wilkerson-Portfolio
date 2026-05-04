@@ -20,6 +20,8 @@ const VAN_GOGH_CLOCK_MAIN = '/images/work/van-gogh-clock.png'
 const MAGAZINE_SPREAD_HERO = '/images/work/magazine-spread.png'
 const EDITORIAL_ILLUSTRATION = '/images/work/editorial-illustration.png'
 const BODONI_SPECIMEN_POSTER = '/images/work/bodoni-type-specimen-poster.png'
+const PEARL_JAM_POSTER = '/images/work/pearl-jam-poster.png'
+const SMOKEY_GUINNESS_POSTER = '/images/work/smokey-guinness-poster.png'
 const COLLAGE_PIECE = '/images/work/collage.png'
 const HOT_SAUCE_LOS_BOTTLE = '/images/work/hot-sauce-los-bottle.png'
 const HOT_SAUCE_WTF_BOTTLE = '/images/work/hot-sauce-wtf-bottle.png'
@@ -126,6 +128,30 @@ export function ProjectContent({ slug }: Props) {
           </div>
         </div>
       )
+    case 'pearl-jam-poster':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={PEARL_JAM_POSTER}
+              alt="Pearl Jam poster: Eddie Vedder in performance with bold PEARL JAM typography on a pink textured background"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
+    case 'smokey-guinness-poster':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={SMOKEY_GUINNESS_POSTER}
+              alt="Smokey Guinness poster: UT mascot Smokey in an orange Tennessee sweater holding a pint, with Lovely Day for a Guinness typography"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
     case 'collage':
       return (
         <div className={styles.block}>
@@ -217,6 +243,25 @@ export function ProjectContent({ slug }: Props) {
             >
               <source src="/video/8-bit-dog-webzine.mp4" type="video/mp4" />
               <source src="/video/8-bit-dog-webzine.mov" type="video/quicktime" />
+            </video>
+          </div>
+        </div>
+      )
+    case 'finventory':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <video
+              className={styles.contain}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="Finventory app screen recording"
+            >
+              <source src="/video/finventory-recording.mp4" type="video/mp4" />
+              <source src="/video/finventory-recording.mov" type="video/quicktime" />
             </video>
           </div>
         </div>
