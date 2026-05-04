@@ -28,12 +28,6 @@
   flex-shrink: 0;
 }
 
-.logo {
-  height: clamp(52px, 12vw, 76px);
-  width: auto;
-  display: block;
-}
-
 .nav {
   display: flex;
   align-items: flex-start;

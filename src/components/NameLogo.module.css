@@ -1,0 +1,18 @@
+/* Inline SVG logo: must live in DOM so Gooper @font-face applies (<img src=".svg"> cannot use page fonts). */
+.root {
+  height: clamp(52px, 12vw, 76px);
+  width: auto;
+  display: block;
+}
+
+.fillShape {
+  fill: #1f3565;
+}
+
+.wordmark {
+  fill: #e6eff3;
+  font-family: Gooper, system-ui, sans-serif;
+  font-size: 129.1px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
