@@ -107,13 +107,18 @@ export function WorkPage() {
               thumbInner = <span className={styles.placeholder} aria-hidden />
             }
 
+            const mediaShellClass =
+              `${styles.thumbMedia} ${isGlue ? styles.thumbMediaGlue : ''}`.trim()
+
             return (
               <li key={project.slug} className={itemClass}>
                 <div className={cardClass} tabIndex={0}>
                   <div className={thumbClass}>
-                    {thumbInner}
-                    <div className={styles.popover} role="tooltip">
-                      <div className={styles.popoverBody}>{project.intro}</div>
+                    <div className={mediaShellClass}>
+                      {thumbInner}
+                      <div className={styles.popover} role="tooltip">
+                        <div className={styles.popoverBody}>{project.intro}</div>
+                      </div>
                     </div>
                   </div>
                   <p className={labelClass}>
