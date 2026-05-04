@@ -1,5 +1,9 @@
 import { figma } from '../figmaAssets'
+import detailStyles from './ProjectContent.module.css'
 import styles from './AboutPage.module.css'
+
+const WEBZINE_VIDEO_MP4 = '/video/8-bit-dog-webzine.mp4'
+const WEBZINE_VIDEO_MOV = '/video/8-bit-dog-webzine.mov'
 
 export function AboutPage() {
   return (
@@ -44,6 +48,25 @@ export function AboutPage() {
             Instagram
           </a>
         </div>
+        <section className={styles.webzine} aria-labelledby="about-webzine-heading">
+          <h2 id="about-webzine-heading" className={styles.webzineTitle}>
+            8-bit Dog Webzine
+          </h2>
+          <div className={detailStyles.wide}>
+            <video
+              className={detailStyles.contain}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="8-bit Dog Webzine screen recording"
+            >
+              <source src={WEBZINE_VIDEO_MP4} type="video/mp4" />
+              <source src={WEBZINE_VIDEO_MOV} type="video/quicktime" />
+            </video>
+          </div>
+        </section>
       </div>
     </div>
   )

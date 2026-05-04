@@ -88,6 +88,29 @@
   outline: none;
 }
 
+/* Thinner underline than global `.hover-underline-ltr`; contact links only. */
+.contacts a:global(.hover-underline-ltr)::after {
+  bottom: 0.08em;
+  height: max(1px, 0.032em);
+}
+
+.webzine {
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.65rem, 2vw, 1rem);
+  width: 100%;
+  max-width: 100%;
+}
+
+.webzineTitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.85vw, 1.35rem);
+  font-weight: 600;
+  line-height: var(--leading-display);
+  color: var(--color-text);
+}
+
 @media (max-width: 520px) {
   .contacts {
     grid-template-columns: 1fr;

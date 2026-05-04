@@ -21,6 +21,8 @@ const MAGAZINE_SPREAD_HERO = '/images/work/magazine-spread.png'
 const EDITORIAL_ILLUSTRATION = '/images/work/editorial-illustration.png'
 const BODONI_SPECIMIN_POSTER = '/images/work/bodoni-type-specimin-poster.png'
 const COLLAGE_PIECE = '/images/work/collage.png'
+const HOT_SAUCE_LOS_BOTTLE = '/images/work/hot-sauce-los-bottle.png'
+const HOT_SAUCE_WTF_BOTTLE = '/images/work/hot-sauce-wtf-bottle.png'
 
 export function ProjectContent({ slug }: Props) {
   switch (slug) {
@@ -184,33 +186,38 @@ export function ProjectContent({ slug }: Props) {
     case 'hot-sauce-bottles':
       return (
         <div className={styles.block}>
-          <div className={styles.wideTall}>
-            <img
-              src={figma.hotSauce.labels1}
-              alt="Los Muertos hot sauce label designs"
-              className={styles.cover}
-            />
+          <div className={styles.pair}>
+            <figure className={styles.frame}>
+              <img
+                src={HOT_SAUCE_LOS_BOTTLE}
+                alt="Los Muertos hot sauce bottle with papel picado–inspired label"
+              />
+            </figure>
+            <figure className={styles.frame}>
+              <img
+                src={HOT_SAUCE_WTF_BOTTLE}
+                alt="What The Fish hot sauce bottle with fish-themed label"
+              />
+            </figure>
           </div>
-          <div className={styles.wideTall}>
-            <img
-              src={figma.hotSauce.bottle1}
-              alt="Los Muertos hot sauce bottle"
-              className={styles.cover}
-            />
-          </div>
-          <div className={styles.wideTall}>
-            <img
-              src={figma.hotSauce.labels2}
-              alt="What The Fish hot sauce label"
-              className={styles.cover}
-            />
-          </div>
-          <div className={styles.wideTall}>
-            <img
-              src={figma.hotSauce.bottle2}
-              alt="What The Fish hot sauce bottle"
-              className={styles.cover}
-            />
+        </div>
+      )
+    case '8-bit-dog-webzine':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <video
+              className={styles.contain}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label="8-bit Dog Webzine screen recording"
+            >
+              <source src="/video/8-bit-dog-webzine.mp4" type="video/mp4" />
+              <source src="/video/8-bit-dog-webzine.mov" type="video/quicktime" />
+            </video>
           </div>
         </div>
       )

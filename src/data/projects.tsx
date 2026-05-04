@@ -12,6 +12,7 @@ export type ProjectSlug =
   | 'netherlands-postcards'
   | 'elmers-glue-animation'
   | 'hot-sauce-bottles'
+  | '8-bit-dog-webzine'
 
 export type ProjectMeta = {
   slug: ProjectSlug
@@ -135,6 +136,13 @@ const hotSauceIntro = (
   </>
 )
 
+const eightBitDogWebzineIntro = (
+  <>
+    <em>8-bit Dog Webzine</em>—screen recording of the pixel-art Dog Days essentials spread brought
+    to life on screen. Loops automatically.
+  </>
+)
+
 /** Local watercolor postcard art — Work grid carousel and project detail page. */
 export const netherlandsPostcardAssets = [
   { src: '/images/work/postcard-vangogh.png', label: 'Van Gogh Museum' },
@@ -230,15 +238,18 @@ export const projects: ProjectMeta[] = [
     slug: 'hot-sauce-bottles',
     title: 'Hot Sauce Bottles',
     shortTitle: 'Hot Sauce Bottles',
-    coverSlides: [
-      '/images/work/hot-sauce-wtf-label.png',
-      '/images/work/hot-sauce-los-labels.png',
-      '/images/work/hot-sauce-los-bottle.png',
-      '/images/work/hot-sauce-wtf-bottle.png',
-    ],
+    coverSlides: ['/images/work/hot-sauce-los-bottle.png', '/images/work/hot-sauce-wtf-bottle.png'],
     slideIntervalMs: 10_000,
-    next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
+    next: { slug: '8-bit-dog-webzine', label: '8-bit Dog Webzine' },
     intro: hotSauceIntro,
+  },
+  {
+    slug: '8-bit-dog-webzine',
+    title: '8-bit Dog Webzine',
+    shortTitle: '8-bit Dog Webzine',
+    coverVideo: '/video/8-bit-dog-webzine.mp4',
+    next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
+    intro: eightBitDogWebzineIntro,
   },
 ]
 

@@ -15,6 +15,7 @@ const slugs: ProjectSlug[] = [
   'netherlands-postcards',
   'elmers-glue-animation',
   'hot-sauce-bottles',
+  '8-bit-dog-webzine',
 ]
 
 function isProjectSlug(s: string | undefined): s is ProjectSlug {
