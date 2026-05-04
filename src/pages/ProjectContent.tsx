@@ -18,6 +18,11 @@ const GLUE_OPTIONAL_STILLS: { file: string; alt: string }[] = [
 const BACKSEAT_COVER = '/images/work/backseat-lovers-album-cover.png'
 const MONSTER_ICONS = '/images/work/monster-icons.png'
 const GAMER_AUDIENCE_PHOTO = '/images/work/gamer-audience-staged-photo.png'
+const VAN_GOGH_CLOCK_MAIN = '/images/work/van-gogh-clock.png'
+const MAGAZINE_SPREAD_HERO = '/images/work/magazine-spread.png'
+const EDITORIAL_ILLUSTRATION = '/images/work/editorial-illustration.png'
+const BODONI_SPECIMIN_POSTER = '/images/work/bodoni-type-specimin-poster.png'
+const COLLAGE_PIECE = '/images/work/collage.png'
 
 export function ProjectContent({ slug }: Props) {
   switch (slug) {
@@ -62,8 +67,8 @@ export function ProjectContent({ slug }: Props) {
         <div className={styles.block}>
           <div className={`${styles.wide} ${styles.clockHero}`}>
             <img
-              src={figma.clock.hero}
-              alt="Van Gogh themed clock built as a paint palette with paint dollops as numbers"
+              src={VAN_GOGH_CLOCK_MAIN}
+              alt="Wooden paint-palette clock with blue and yellow paint dollops and brush hands"
               className={styles.contain}
             />
           </div>
@@ -99,8 +104,8 @@ export function ProjectContent({ slug }: Props) {
         <div className={styles.block}>
           <div className={styles.wide}>
             <img
-              src={figma.magazine.hero}
-              alt="Magazine spread: Dog Days, The Essentials — full spread layout"
+              src={MAGAZINE_SPREAD_HERO}
+              alt="Magazine spread: Dog Days, The Essentials — pixel-art OS-style window with product grid and sidebar list"
               className={styles.contain}
             />
           </div>
@@ -111,6 +116,42 @@ export function ProjectContent({ slug }: Props) {
             <figure className={styles.frame}>
               <img src={figma.magazine.detailRight} alt="Magazine spread pixel art product detail" />
             </figure>
+          </div>
+        </div>
+      )
+    case 'editorial-illustration':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={EDITORIAL_ILLUSTRATION}
+              alt="Editorial illustration: takeout coffee cup with foil wrap and hand-drawn ingredient lettering on green"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
+    case 'bodoni-type-specimin-poster':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={BODONI_SPECIMIN_POSTER}
+              alt="Bodoni type specimen poster: coral and sage grid with character set, large letter studies, and historical text"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
+    case 'collage':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={COLLAGE_PIECE}
+              alt="Vertical collage on black: torn vertical letters M A D I, layered photos including couple, rose, picnic, pandas, orange VOLS letter signs"
+              className={styles.contain}
+            />
           </div>
         </div>
       )
@@ -154,12 +195,6 @@ export function ProjectContent({ slug }: Props) {
     case 'elmers-glue-animation':
       return (
         <div className={styles.block}>
-          <p className={styles.videoNote}>
-            Place your main animation file at <code>public/glue-animation.mp4</code> (H.264 MP4).
-            It will autoplay (muted) below; use the controls to pause or scrub. Optional:{' '}
-            <code>public/glue-animation-poster.jpg</code> for the first frame, and stills in{' '}
-            <code>public/images/glue/</code>.
-          </p>
           <div className={styles.videoBox}>
             <video
               className={styles.video}
@@ -169,14 +204,9 @@ export function ProjectContent({ slug }: Props) {
               loop
               playsInline
               preload="auto"
-              poster="/glue-animation-poster.jpg"
             >
               <source src="/glue-animation.mp4" type="video/mp4" />
             </video>
-            <p className={styles.fallbackText}>
-              If you see a blank player, add <code>glue-animation.mp4</code> to the <code>public</code>{' '}
-              folder at the project root (same level as <code>index.html</code>), then refresh.
-            </p>
           </div>
           <div className={styles.glueStills}>
             {GLUE_OPTIONAL_STILLS.map(({ file, alt }) => (

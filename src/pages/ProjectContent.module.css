@@ -139,10 +139,12 @@
 
 .video {
   width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 0;
   background: #000;
-  aspect-ratio: 16 / 9;
-  min-height: 200px;
+  vertical-align: middle;
 }
 
 .fallbackText {

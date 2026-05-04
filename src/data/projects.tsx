@@ -7,6 +7,9 @@ export type ProjectSlug =
   | 'van-gogh-clock'
   | 'scribbld'
   | 'magazine-spread'
+  | 'editorial-illustration'
+  | 'bodoni-type-specimin-poster'
+  | 'collage'
   | 'netherlands-postcards'
   | 'elmers-glue-animation'
   | 'hot-sauce-bottles'
@@ -68,6 +71,32 @@ const scribbldIntro = (
     minutes and has to draw the prompt, however many times they want until the timer is up. It is
     modeled after a social media app, where other users are able to like the SCRIBBLS, but no
     words other than usernames are used on the app.
+  </>
+)
+
+const editorialIllustrationIntro = (
+  <>
+    Placeholder copy for <em>Editorial Illustration</em>—a vertical piece mixing a photo-based subject
+    with hand-drawn ingredient lettering on a bold green field. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit: swap in your concept, headline, publication context, or materials
+    when you are ready.
+  </>
+)
+
+const bodoniTypeSpeciminIntro = (
+  <>
+    Placeholder copy for the <em>Bodoni</em> type specimen poster—a structured grid showcasing the full
+    character set, oversized letter studies, and short historical copy in a cream, coral, and sage
+    palette. Lorem ipsum dolor sit amet: replace this with your rationale, print specs, or coursework
+    brief when you’re ready.
+  </>
+)
+
+const collageIntro = (
+  <>
+    Placeholder copy for <em>Collage</em>—a black-background scrapbook-style piece with torn-paper
+    type, mixed photo treatments, and playful cut-and-layer composition. Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit: swap in your sources, theme, or process notes anytime.
   </>
 )
 
@@ -143,6 +172,7 @@ export const projects: ProjectMeta[] = [
     slug: 'van-gogh-clock',
     title: 'Van Gogh Clock',
     shortTitle: 'Van Gogh Clock',
+    coverImage: '/images/work/van-gogh-clock.png',
     next: { slug: 'scribbld', label: 'SCRIBBLD' },
     intro: clockIntro,
   },
@@ -157,8 +187,33 @@ export const projects: ProjectMeta[] = [
     slug: 'magazine-spread',
     title: 'Magazine Spread',
     shortTitle: 'Magazine Spread',
-    next: { slug: 'netherlands-postcards', label: 'Netherlands Postcards' },
+    coverImage: '/images/work/magazine-spread.png',
+    next: { slug: 'editorial-illustration', label: 'Editorial Illustration' },
     intro: magazineIntro,
+  },
+  {
+    slug: 'editorial-illustration',
+    title: 'Editorial Illustration',
+    shortTitle: 'Editorial Illustration',
+    coverImage: '/images/work/editorial-illustration.png',
+    next: { slug: 'bodoni-type-specimin-poster', label: 'Bodoni Type Specimin Poster' },
+    intro: editorialIllustrationIntro,
+  },
+  {
+    slug: 'bodoni-type-specimin-poster',
+    title: 'Bodoni Type Specimin Poster',
+    shortTitle: 'Bodoni Type Specimin Poster',
+    coverImage: '/images/work/bodoni-type-specimin-poster.png',
+    next: { slug: 'collage', label: 'Collage' },
+    intro: bodoniTypeSpeciminIntro,
+  },
+  {
+    slug: 'collage',
+    title: 'Collage',
+    shortTitle: 'Collage',
+    coverImage: '/images/work/collage.png',
+    next: { slug: 'netherlands-postcards', label: 'Netherlands Postcards' },
+    intro: collageIntro,
   },
   {
     slug: 'netherlands-postcards',
