@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react'
 
 export type ProjectSlug =
+  | 'backseat-lovers-album-cover'
+  | 'monster-icons'
+  | 'gamer-audience-staged-photo'
   | 'van-gogh-clock'
   | 'scribbld'
   | 'magazine-spread'
@@ -12,9 +15,38 @@ export type ProjectMeta = {
   slug: ProjectSlug
   title: string
   shortTitle: string
+  /** Work grid thumbnail; omit for grey placeholder square. */
+  coverImage?: string
   next: { slug: ProjectSlug; label: string }
   intro: ReactNode
 }
+
+const gamerAudienceStagedIntro = (
+  <>
+    Placeholder copy for <em>Gamer Audience Staged Photo</em>—a neon-lit tabletop setup built around
+    a console, accessories, paint, and scattered “ink” accents to sell a playful, collectible vibe.
+    Lorem ipsum dolor sit amet: replace this with your shot list, lighting notes, props, or post work
+    when you are ready.
+  </>
+)
+
+const monsterIconsIntro = (
+  <>
+    Placeholder summary for Monster Icons—a black-and-white set of whimsical character marks in a
+    bold outline style, each shown at two sizes in a simple grid. Dolor sit amet, consectetur
+    adipiscing elit: swap this text for your real brief, audience, process, or deliverables whenever
+    you like.
+  </>
+)
+
+const backseatLoversIntro = (
+  <>
+    This is placeholder copy for the Backseat Lovers album cover project. The collage treatment
+    mixes torn-paper type, a vintage sports car, and a grainy background to match a lo-fi album
+    sleeve. Lorem ipsum dolor sit amet, consectetur adipiscing elit—you can replace this paragraph
+    with your real process notes, materials, and designer intent whenever you are ready.
+  </>
+)
 
 const clockIntro = (
   <>
@@ -84,6 +116,30 @@ const hotSauceIntro = (
 
 export const projects: ProjectMeta[] = [
   {
+    slug: 'backseat-lovers-album-cover',
+    title: 'Backseat Lovers Album Cover',
+    shortTitle: 'Backseat Lovers Album Cover',
+    coverImage: '/images/work/backseat-lovers-album-cover.png',
+    next: { slug: 'monster-icons', label: 'Monster Icons' },
+    intro: backseatLoversIntro,
+  },
+  {
+    slug: 'monster-icons',
+    title: 'Monster Icons',
+    shortTitle: 'Monster Icons',
+    coverImage: '/images/work/monster-icons.png',
+    next: { slug: 'gamer-audience-staged-photo', label: 'Gamer Audience Staged Photo' },
+    intro: monsterIconsIntro,
+  },
+  {
+    slug: 'gamer-audience-staged-photo',
+    title: 'Gamer Audience Staged Photo',
+    shortTitle: 'Gamer Audience Staged Photo',
+    coverImage: '/images/work/gamer-audience-staged-photo.png',
+    next: { slug: 'van-gogh-clock', label: 'Van Gogh Clock' },
+    intro: gamerAudienceStagedIntro,
+  },
+  {
     slug: 'van-gogh-clock',
     title: 'Van Gogh Clock',
     shortTitle: 'Van Gogh Clock',
@@ -122,7 +178,7 @@ export const projects: ProjectMeta[] = [
     slug: 'hot-sauce-bottles',
     title: 'Hot Sauce Bottles',
     shortTitle: 'Hot Sauce Bottles',
-    next: { slug: 'van-gogh-clock', label: 'Van Gogh Clock' },
+    next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
     intro: hotSauceIntro,
   },
 ]

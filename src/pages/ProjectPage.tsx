@@ -4,6 +4,9 @@ import { ProjectContent } from './ProjectContent'
 import { ProjectShell } from '../components/ProjectShell'
 
 const slugs: ProjectSlug[] = [
+  'backseat-lovers-album-cover',
+  'monster-icons',
+  'gamer-audience-staged-photo',
   'van-gogh-clock',
   'scribbld',
   'magazine-spread',

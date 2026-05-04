@@ -15,8 +15,48 @@ const GLUE_OPTIONAL_STILLS: { file: string; alt: string }[] = [
   { file: 'drip.jpg', alt: 'Glue bottle stop motion frame' },
 ]
 
+const BACKSEAT_COVER = '/images/work/backseat-lovers-album-cover.png'
+const MONSTER_ICONS = '/images/work/monster-icons.png'
+const GAMER_AUDIENCE_PHOTO = '/images/work/gamer-audience-staged-photo.png'
+
 export function ProjectContent({ slug }: Props) {
   switch (slug) {
+    case 'gamer-audience-staged-photo':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={GAMER_AUDIENCE_PHOTO}
+              alt="Staged photo: neon pink and green tabletop with Nintendo Switch, Joy-Cons, Amiibo figures, paint bottles, brushes, and splatter props"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
+    case 'monster-icons':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={MONSTER_ICONS}
+              alt="Four hand-drawn monster characters in outlined icon style with smaller matching marks"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
+    case 'backseat-lovers-album-cover':
+      return (
+        <div className={styles.block}>
+          <div className={styles.wide}>
+            <img
+              src={BACKSEAT_COVER}
+              alt="Backseat Lovers album cover collage: Hurry, with torn paper typography and vintage car"
+              className={styles.contain}
+            />
+          </div>
+        </div>
+      )
     case 'van-gogh-clock':
       return (
         <div className={styles.block}>

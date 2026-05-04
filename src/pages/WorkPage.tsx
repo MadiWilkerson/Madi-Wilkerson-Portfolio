@@ -10,7 +10,11 @@ export function WorkPage() {
             <li key={project.slug} className={styles.item}>
               <div className={styles.card} tabIndex={0}>
                 <div className={styles.thumbWrap}>
-                  <span className={styles.placeholder} aria-hidden />
+                  {project.coverImage ? (
+                    <img src={project.coverImage} alt="" className={styles.thumb} />
+                  ) : (
+                    <span className={styles.placeholder} aria-hidden />
+                  )}
                   <div className={styles.popover} role="tooltip">
                     <div className={styles.popoverBody}>{project.intro}</div>
                   </div>
