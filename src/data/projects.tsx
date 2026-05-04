@@ -7,7 +7,7 @@ export type ProjectSlug =
   | 'van-gogh-clock'
   | 'magazine-spread'
   | 'editorial-illustration'
-  | 'bodoni-type-specimin-poster'
+  | 'bodoni-type-specimen-poster'
   | 'collage'
   | 'netherlands-postcards'
   | 'elmers-glue-animation'
@@ -31,28 +31,33 @@ export type ProjectMeta = {
 
 const gamerAudienceStagedIntro = (
   <>
-    Placeholder copy for <em>Gamer Audience Staged Photo</em>—a neon-lit tabletop setup built around
-    a console, accessories, paint, and scattered “ink” accents to sell a playful, collectible vibe.
-    Lorem ipsum dolor sit amet: replace this with your shot list, lighting notes, props, or post work
-    when you are ready.
+    For the Gamer Audience Staged Photo project, I was given an audience and had to create a staged
+    photograph that would appeal to them. I chose a gaming audience and based my concept around{' '}
+    <em>Splatoon 2</em>, using its characters along with a Nintendo Switch. I arranged the scene to
+    reflect the bright, playful energy of the game, while also making it feel like a real moment a
+    gamer might experience. The goal was to clearly communicate the intended audience through the
+    objects, composition, and overall mood of the photo.
   </>
 )
 
 const monsterIconsIntro = (
   <>
-    Placeholder summary for Monster Icons—a black-and-white set of whimsical character marks in a
-    bold outline style, each shown at two sizes in a simple grid. Dolor sit amet, consectetur
-    adipiscing elit: swap this text for your real brief, audience, process, or deliverables whenever
-    you like.
+    For the Monster Icons project, I was asked to create a set of icons using only black and white. I
+    designed a series of monster-inspired icons, focusing on simplifying each character into clear,
+    readable shapes. Because color was not an option, I relied heavily on contrast, silhouette, and
+    line work to define each design. The goal of this project was to create icons that were visually
+    consistent and easily recognizable, while still giving each monster its own personality.
   </>
 )
 
 const backseatLoversIntro = (
   <>
-    This is placeholder copy for the Backseat Lovers album cover project. The collage treatment
-    mixes torn-paper type, a vintage sports car, and a grainy background to match a lo-fi album
-    sleeve. Lorem ipsum dolor sit amet, consectetur adipiscing elit—you can replace this paragraph
-    with your real process notes, materials, and designer intent whenever you are ready.
+    For the Backseat Lovers Album Cover project, I was tasked with creating an album cover concept
+    for the band The Backseat Lovers. I chose to focus on the word “hurry” as the main idea, and used
+    collage design elements to build the composition. By layering different images and textures, I
+    created a sense of movement and urgency that connects back to the word. The overall goal was to
+    visually represent a feeling rather than a specific scene, while using collage techniques to
+    create depth and interest.
   </>
 )
 
@@ -69,27 +74,34 @@ const clockIntro = (
 
 const editorialIllustrationIntro = (
   <>
-    Placeholder copy for <em>Editorial Illustration</em>—a vertical piece mixing a photo-based subject
-    with hand-drawn ingredient lettering on a bold green field. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit: swap in your concept, headline, publication context, or materials
-    when you are ready.
+    For the Editorial Illustration project, I created an image based on an article about the new
+    Starbucks CEO, Brian Niccol, who previously worked at Chipotle. An editorial illustration is
+    meant to visually represent and support a written article, often simplifying or highlighting its
+    main idea. My illustration focused on the idea of making Starbucks a happier place, especially in
+    response to how unhappy many baristas have been. I aimed to capture this shift in tone through
+    imagery that reflects both the current issues and the intended improvement.
   </>
 )
 
-const bodoniTypeSpeciminIntro = (
+const bodoniTypeSpecimenIntro = (
   <>
-    Placeholder copy for the <em>Bodoni</em> type specimen poster—a structured grid showcasing the full
-    character set, oversized letter studies, and short historical copy in a cream, coral, and sage
-    palette. Lorem ipsum dolor sit amet: replace this with your rationale, print specs, or coursework
-    brief when you’re ready.
+    For the Bodoni Type Specimen Poster project, I was assigned the typeface Bodoni and asked to
+    create a poster that showcased its features. I focused on highlighting the font’s contrast,
+    elegance, and structure by incorporating ligatures and ornaments into the design. Through scale,
+    spacing, and layout, I aimed to make the poster both visually interesting and informative. The
+    goal was to demonstrate an understanding of the typeface while creating a clean and organized
+    composition.
   </>
 )
 
 const collageIntro = (
   <>
-    Placeholder copy for <em>Collage</em>—a black-background scrapbook-style piece with torn-paper
-    type, mixed photo treatments, and playful cut-and-layer composition. Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit: swap in your sources, theme, or process notes anytime.
+    For the Collage project, I was given a stack of magazines and asked to create a composition using
+    only those materials. I chose to include an image of me and my boyfriend as the central focus, and
+    then surrounded it with images of things I love. By layering and arranging these elements, I
+    created a piece that felt personal and expressive. The goal of this project was to explore
+    composition and storytelling through found imagery, while using collage as a way to combine
+    different ideas into one cohesive design.
   </>
 )
 
@@ -138,8 +150,12 @@ const hotSauceIntro = (
 
 const eightBitDogWebzineIntro = (
   <>
-    <em>8-bit Dog Webzine</em>—screen recording of the pixel-art Dog Days essentials spread brought
-    to life on screen. Loops automatically.
+    For the 8-bit Dog Webzine project, I created a digital magazine inspired by my earlier magazine
+    spread. The webzine focused on different dog breeds, as well as dog toys, food, and everyday
+    necessities. I designed it to feel playful and engaging while still being easy to navigate in a
+    digital format. By organizing the content clearly and keeping a consistent visual style, I was
+    able to translate a print concept into an interactive experience. The goal was to explore how
+    editorial design can function in a digital space.
   </>
 )
 
@@ -198,16 +214,16 @@ export const projects: ProjectMeta[] = [
     title: 'Editorial Illustration',
     shortTitle: 'Editorial Illustration',
     coverImage: '/images/work/editorial-illustration.png',
-    next: { slug: 'bodoni-type-specimin-poster', label: 'Bodoni Type Specimin Poster' },
+    next: { slug: 'bodoni-type-specimen-poster', label: 'Bodoni Type Specimen Poster' },
     intro: editorialIllustrationIntro,
   },
   {
-    slug: 'bodoni-type-specimin-poster',
-    title: 'Bodoni Type Specimin Poster',
-    shortTitle: 'Bodoni Type Specimin Poster',
-    coverImage: '/images/work/bodoni-type-specimin-poster.png',
+    slug: 'bodoni-type-specimen-poster',
+    title: 'Bodoni Type Specimen Poster',
+    shortTitle: 'Bodoni Type Specimen Poster',
+    coverImage: '/images/work/bodoni-type-specimen-poster.png',
     next: { slug: 'collage', label: 'Collage' },
-    intro: bodoniTypeSpeciminIntro,
+    intro: bodoniTypeSpecimenIntro,
   },
   {
     slug: 'collage',

@@ -19,7 +19,7 @@ const GAMER_AUDIENCE_PHOTO = '/images/work/gamer-audience-staged-photo.png'
 const VAN_GOGH_CLOCK_MAIN = '/images/work/van-gogh-clock.png'
 const MAGAZINE_SPREAD_HERO = '/images/work/magazine-spread.png'
 const EDITORIAL_ILLUSTRATION = '/images/work/editorial-illustration.png'
-const BODONI_SPECIMIN_POSTER = '/images/work/bodoni-type-specimin-poster.png'
+const BODONI_SPECIMEN_POSTER = '/images/work/bodoni-type-specimen-poster.png'
 const COLLAGE_PIECE = '/images/work/collage.png'
 const HOT_SAUCE_LOS_BOTTLE = '/images/work/hot-sauce-los-bottle.png'
 const HOT_SAUCE_WTF_BOTTLE = '/images/work/hot-sauce-wtf-bottle.png'
@@ -114,12 +114,12 @@ export function ProjectContent({ slug }: Props) {
           </div>
         </div>
       )
-    case 'bodoni-type-specimin-poster':
+    case 'bodoni-type-specimen-poster':
       return (
         <div className={styles.block}>
           <div className={styles.wide}>
             <img
-              src={BODONI_SPECIMIN_POSTER}
+              src={BODONI_SPECIMEN_POSTER}
               alt="Bodoni type specimen poster: coral and sage grid with character set, large letter studies, and historical text"
               className={styles.contain}
             />

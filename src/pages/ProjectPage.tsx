@@ -10,7 +10,7 @@ const slugs: ProjectSlug[] = [
   'van-gogh-clock',
   'magazine-spread',
   'editorial-illustration',
-  'bodoni-type-specimin-poster',
+  'bodoni-type-specimen-poster',
   'collage',
   'netherlands-postcards',
   'elmers-glue-animation',
