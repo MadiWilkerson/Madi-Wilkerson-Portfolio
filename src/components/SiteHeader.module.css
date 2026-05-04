@@ -3,7 +3,7 @@
   top: 0;
   z-index: 20;
   background: var(--color-page-bg);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+  box-shadow: none;
 }
 
 .bar {
@@ -23,7 +23,7 @@
 }
 
 .logo {
-  height: clamp(36px, 8vw, 48px);
+  height: clamp(52px, 12vw, 76px);
   width: auto;
   display: block;
 }
@@ -31,39 +31,34 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.35rem, 2vw, 0.65rem);
+  gap: clamp(1rem, 3vw, 1.75rem);
   flex-shrink: 0;
 }
 
-.navBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.35rem;
-  padding: 0.35rem 0.95rem;
-  font-size: 0.9375rem;
+.navLink {
+  display: inline-block;
+  font-size: clamp(1rem, 1.85vw, 1.125rem);
   font-weight: 600;
-  text-decoration: none;
   color: var(--color-text);
-  border: 1px solid var(--color-text);
-  border-radius: 999px;
-  background: transparent;
-  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 0.25rem 0;
+  transition: opacity 0.15s ease;
 }
 
-.navBtn:hover,
-.navBtn:focus-visible {
-  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+.navLink:hover,
+.navLink:focus-visible {
+  opacity: 0.8;
   outline: none;
 }
 
-.navBtnActive {
-  background: var(--color-text);
-  color: var(--color-page-bg);
+.navLinkActive {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: max(2px, 0.08em);
 }
 
-.navBtnActive:hover,
-.navBtnActive:focus-visible {
-  background: color-mix(in srgb, var(--color-text) 88%, black);
-  color: var(--color-page-bg);
+.navLinkActive:hover,
+.navLinkActive:focus-visible {
+  opacity: 1;
 }

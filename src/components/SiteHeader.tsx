@@ -1,8 +1,8 @@
 import { NavLink, Link } from 'react-router-dom'
 import styles from './SiteHeader.module.css'
 
-function navBtnClass(active: boolean) {
-  return [styles.navBtn, active ? styles.navBtnActive : ''].join(' ')
+function navLinkClass(active: boolean) {
+  return [styles.navLink, active ? styles.navLinkActive : ''].join(' ')
 }
 
 export function SiteHeader() {
@@ -13,11 +13,11 @@ export function SiteHeader() {
           <img src="/namelogo.svg" alt="" className={styles.logo} width={784} height={405} />
         </Link>
         <nav className={styles.nav} aria-label="Primary">
-          <NavLink to="/" end className={({ isActive }) => navBtnClass(isActive)}>
-            Work
+          <NavLink to="/" end className={({ isActive }) => navLinkClass(isActive)}>
+            work
           </NavLink>
-          <NavLink to="/about" className={({ isActive }) => navBtnClass(isActive)}>
-            About
+          <NavLink to="/about" className={({ isActive }) => navLinkClass(isActive)}>
+            about
           </NavLink>
         </nav>
       </div>
