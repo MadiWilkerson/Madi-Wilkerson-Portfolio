@@ -4,7 +4,7 @@ import styles from './AboutPage.module.css'
 export function AboutPage() {
   return (
     <div className={styles.page}>
-      <div className={styles.top}>
+      <div className={styles.inner}>
         <div className={styles.photoFrame}>
           <img
             src={figma.aboutPhoto}
@@ -20,51 +20,26 @@ export function AboutPage() {
           is to work alongside wildlife conservation as a graphic designer, I also enjoy taking care
           of my pets and other forms of art such as ceramics, painting, and card making.
         </p>
-      </div>
-      <div className={styles.bottom}>
-        <p className={styles.srConnect}>Connect</p>
-        <ul className={styles.socialList}>
+        <ul className={styles.links}>
           <li>
-            <a
-              href="mailto:mrwilkerson937@gmail.com"
-              className={styles.socialLink}
-              aria-label="Send email to mrwilkerson937@gmail.com"
-            >
-              <img src={figma.iconEmail} alt="" width={333} height={238} className={styles.icon} />
-            </a>
+            <a href="mailto:mrwilkerson937@gmail.com">mrwilkerson937@gmail.com</a>
           </li>
           <li>
             <a
               href="https://www.linkedin.com/in/madison-wilkerson-40299a272/"
-              className={styles.socialLink}
               rel="noreferrer"
               target="_blank"
-              aria-label="Madison Wilkerson on LinkedIn"
             >
-              <img
-                src={figma.iconLinkedin}
-                alt=""
-                width={230}
-                height={222}
-                className={styles.icon}
-              />
+              LinkedIn
             </a>
           </li>
           <li>
             <a
               href="https://www.instagram.com/madi.wilkerson.design/"
-              className={styles.socialLink}
               rel="noreferrer"
               target="_blank"
-              aria-label="Madi Wilkerson design on Instagram"
             >
-              <img
-                src={figma.iconInstagram}
-                alt=""
-                width={288}
-                height={263}
-                className={styles.icon}
-              />
+              Instagram
             </a>
           </li>
         </ul>

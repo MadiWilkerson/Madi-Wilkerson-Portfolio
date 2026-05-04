@@ -1,63 +1,69 @@
 .header {
-  position: relative;
-  background: var(--color-powder);
-  min-height: var(--header-h-inner);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-page-bg);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
 }
 
-.header[data-variant='home'] {
-  min-height: var(--header-h-home);
-}
-
-.inner {
-  position: relative;
+.bar {
   max-width: var(--layout-max);
   margin: 0 auto;
-  min-height: inherit;
-  box-sizing: border-box;
-}
-
-.header[data-variant='home'] .inner {
+  padding: 0.75rem var(--page-padding-x);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: clamp(4.5rem, 7.3vw, 6.5625rem) var(--page-padding-x)
-    clamp(2rem, 5.5vw, 5rem);
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-/* Inner pages: powder band only — logo mark is fixed to viewport top-right */
-.header[data-variant='inner'] .inner {
-  min-height: var(--header-h-inner);
-  padding: 0;
-  max-width: none;
-  pointer-events: none;
-}
-
-.logoHome {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: min(755px, 100%);
-}
-
-.logoHomeImg {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.header[data-variant='inner'] .logoLink {
-  position: fixed;
-  z-index: 40;
-  top: calc(var(--header-corner-gutter) + env(safe-area-inset-top, 0px));
-  right: calc(var(--header-corner-gutter) + env(safe-area-inset-right, 0px));
-  left: auto;
+.logoLink {
   display: block;
   line-height: 0;
-  max-width: min(301px, 42vw);
-  pointer-events: auto;
+  flex-shrink: 0;
 }
 
-.logoHeaderImg {
-  width: 100%;
-  height: auto;
+.logo {
+  height: clamp(36px, 8vw, 48px);
+  width: auto;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.35rem, 2vw, 0.65rem);
+  flex-shrink: 0;
+}
+
+.navBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navBtn:hover,
+.navBtn:focus-visible {
+  background: color-mix(in srgb, var(--color-text) 8%, transparent);
+  outline: none;
+}
+
+.navBtnActive {
+  background: var(--color-text);
+  color: var(--color-page-bg);
+}
+
+.navBtnActive:hover,
+.navBtnActive:focus-visible {
+  background: color-mix(in srgb, var(--color-text) 88%, black);
+  color: var(--color-page-bg);
 }

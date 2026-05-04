@@ -1,36 +1,25 @@
-import { Link } from 'react-router-dom'
-import { figma } from '../figmaAssets'
+import { NavLink, Link } from 'react-router-dom'
 import styles from './SiteHeader.module.css'
 
-type Props = {
-  variant: 'home' | 'inner'
+function navBtnClass(active: boolean) {
+  return [styles.navBtn, active ? styles.navBtnActive : ''].join(' ')
 }
 
-export function SiteHeader({ variant }: Props) {
+export function SiteHeader() {
   return (
-    <header className={styles.header} data-variant={variant}>
-      <div className={styles.inner}>
-        {variant === 'home' ? (
-          <div className={styles.logoHome} aria-hidden>
-            <img
-              src={figma.logoHome}
-              alt=""
-              className={styles.logoHomeImg}
-              width={755}
-              height={371}
-            />
-          </div>
-        ) : (
-          <Link to="/" className={styles.logoLink} aria-label="Madi Wilkerson home">
-            <img
-              src={figma.logoHeader}
-              alt=""
-              className={styles.logoHeaderImg}
-              width={301}
-              height={148}
-            />
-          </Link>
-        )}
+    <header className={styles.header}>
+      <div className={styles.bar}>
+        <Link to="/" className={styles.logoLink} aria-label="Madi Wilkerson home">
+          <img src="/namelogo.svg" alt="" className={styles.logo} width={784} height={405} />
+        </Link>
+        <nav className={styles.nav} aria-label="Primary">
+          <NavLink to="/" end className={({ isActive }) => navBtnClass(isActive)}>
+            Work
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => navBtnClass(isActive)}>
+            About
+          </NavLink>
+        </nav>
       </div>
     </header>
   )

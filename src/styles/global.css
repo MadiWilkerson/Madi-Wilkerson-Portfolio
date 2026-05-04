@@ -1,41 +1,33 @@
 @font-face {
-  font-family: 'Test Signifier';
-  src: url('/fonts/TestSignifierVF-Roman.ttf') format('truetype');
-  font-weight: 100 900;
+  font-family: Gooper;
+  src: url('/fonts/Gooper-Regular.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Test Signifier';
-  src: url('/fonts/TestSignifierVF-Italic.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
+  font-family: Gooper;
+  src: url('/fonts/Gooper-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --color-powder: #c3dbe7;
-  --color-ice: #f5fcff;
-  --color-maroon: #64303d;
-  --color-text-on-card: #c3dbe7;
-  --font-serif: 'Test Signifier', Georgia, 'Times New Roman', serif;
+  --color-page-bg: #e6eff3;
+  --color-text: #1f3565;
+  /* Legacy aliases used across modules */
+  --color-maroon: #1f3565;
+  --color-ice: #e6eff3;
+  --color-powder: #e6eff3;
+  --color-text-on-card: #e6eff3;
+  --font-sans: Gooper, system-ui, sans-serif;
   --max-content: 1284px;
-  --layout-max: 1440px;
-  --header-h-inner: 219px;
-  --header-h-home: clamp(22rem, 52vw, 34.75rem);
-  --page-padding-x: clamp(1rem, 5.44vw, 4.875rem);
-  --grid-gap-home: clamp(1rem, 5.48vw, 4.9375rem);
-  --radius-card: 25px;
-  --leading-display: 0.82115;
-  /* Same inset as menu control: fixed logo stays aligned on all inner pages */
-  --header-corner-gutter: clamp(0.45rem, 2.2vw, 0.7rem);
-}
-
-@media (min-width: 480px) {
-  :root {
-    --header-corner-gutter: clamp(0.5rem, 2vw, 0.85rem);
-  }
+  --layout-max: 1200px;
+  --page-padding-x: clamp(1rem, 4vw, 2rem);
+  --radius-card: 8px;
+  --leading-display: 1.2;
 }
 
 *,
@@ -50,12 +42,22 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 450;
-  line-height: 1.35;
-  color: var(--color-maroon);
-  background: var(--color-ice);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-text);
+  background: var(--color-page-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 #root {
@@ -93,7 +95,6 @@ button {
   border: 0;
 }
 
-/* Left-to-right underline on hover (shared with home project cards). */
 .hover-underline-ltr {
   position: relative;
   display: inline-block;

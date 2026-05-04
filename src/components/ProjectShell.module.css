@@ -8,7 +8,7 @@
 
 .title {
   font-size: clamp(1.5rem, 2.85vw, 2.65rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--leading-display);
   text-align: center;
   margin: 0 auto clamp(1.5rem, 4vw, 2.5rem);
@@ -18,7 +18,7 @@
 
 .intro {
   font-size: clamp(1.05rem, 1.95vw, 1.5rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.25;
   margin: 0 auto clamp(2rem, 4vw, 3rem);
   max-width: 1279px;
