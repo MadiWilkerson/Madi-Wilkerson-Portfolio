@@ -15,7 +15,9 @@ export function WorkPage() {
                     <div className={styles.popoverBody}>{project.intro}</div>
                   </div>
                 </div>
-                <p className={styles.label}>{project.title}</p>
+                <p className={styles.label}>
+                  <span className="hover-underline-ltr">{project.title}</span>
+                </p>
               </div>
             </li>
           ))}

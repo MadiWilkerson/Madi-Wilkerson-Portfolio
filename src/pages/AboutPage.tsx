@@ -21,12 +21,15 @@ export function AboutPage() {
           of my pets and other forms of art such as ceramics, painting, and card making.
         </p>
         <div className={styles.contacts}>
-          <a href="mailto:mrwilkerson937@gmail.com" className={styles.contact}>
+          <a
+            href="mailto:mrwilkerson937@gmail.com"
+            className={`hover-underline-ltr ${styles.contact}`}
+          >
             mrwilkerson937@gmail.com
           </a>
           <a
             href="https://www.linkedin.com/in/madison-wilkerson-40299a272/"
-            className={styles.contact}
+            className={`hover-underline-ltr ${styles.contact}`}
             rel="noreferrer"
             target="_blank"
           >
@@ -34,7 +37,7 @@ export function AboutPage() {
           </a>
           <a
             href="https://www.instagram.com/madi.wilkerson.design/"
-            className={styles.contact}
+            className={`hover-underline-ltr ${styles.contact}`}
             rel="noreferrer"
             target="_blank"
           >

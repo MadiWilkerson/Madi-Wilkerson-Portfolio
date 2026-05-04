@@ -84,10 +84,7 @@
   justify-self: end;
 }
 
-.contact:hover,
 .contact:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
   outline: none;
 }
 
