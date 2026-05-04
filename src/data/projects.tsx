@@ -5,7 +5,6 @@ export type ProjectSlug =
   | 'monster-icons'
   | 'gamer-audience-staged-photo'
   | 'van-gogh-clock'
-  | 'scribbld'
   | 'magazine-spread'
   | 'editorial-illustration'
   | 'bodoni-type-specimin-poster'
@@ -20,6 +19,11 @@ export type ProjectMeta = {
   shortTitle: string
   /** Work grid thumbnail; omit for grey placeholder square. */
   coverImage?: string
+  /** Looping muted video tile on Work page (shows full frame, contain). */
+  coverVideo?: string
+  /** Rotate through stills on Work page (e.g. hot sauce gallery), `slideIntervalMs` defaults to 10s. */
+  coverSlides?: string[]
+  slideIntervalMs?: number
   next: { slug: ProjectSlug; label: string }
   intro: ReactNode
 }
@@ -59,18 +63,6 @@ const clockIntro = (
     chose to make my clock more abstract by making it into the shape of a paint palette and using
     paint swatches as the numbers. The paint swatches were the colors of Van Gogh’s most well known
     painting, <em>Starry Night.</em>
-  </>
-)
-
-const scribbldIntro = (
-  <>
-    SCRIBBLD was my idea for a project titled <em>Public, Utility.</em> The idea formed from the
-    thought of wanting to protect public privacy, making the user draw what they see instead of
-    taking photos of people and their belongings. Once the app was starting to be designed, I
-    changed my direction, and made SCRIBBLD into a game, where the user gets a new prompt every 15
-    minutes and has to draw the prompt, however many times they want until the timer is up. It is
-    modeled after a social media app, where other users are able to like the SCRIBBLS, but no
-    words other than usernames are used on the app.
   </>
 )
 
@@ -143,6 +135,15 @@ const hotSauceIntro = (
   </>
 )
 
+/** Local watercolor postcard art — Work grid carousel and project detail page. */
+export const netherlandsPostcardAssets = [
+  { src: '/images/work/postcard-vangogh.png', label: 'Van Gogh Museum' },
+  { src: '/images/work/postcard-gingerbread.png', label: 'Gingerbread Houses' },
+  { src: '/images/work/postcard-tulips.png', label: 'Bollenstreek' },
+  { src: '/images/work/postcard-amstel.png', label: 'Amstel River' },
+  { src: '/images/work/postcard-windmill.png', label: 'Windmills' },
+] as const
+
 export const projects: ProjectMeta[] = [
   {
     slug: 'backseat-lovers-album-cover',
@@ -173,15 +174,8 @@ export const projects: ProjectMeta[] = [
     title: 'Van Gogh Clock',
     shortTitle: 'Van Gogh Clock',
     coverImage: '/images/work/van-gogh-clock.png',
-    next: { slug: 'scribbld', label: 'SCRIBBLD' },
-    intro: clockIntro,
-  },
-  {
-    slug: 'scribbld',
-    title: 'SCRIBBLD',
-    shortTitle: 'SCRIBBLD',
     next: { slug: 'magazine-spread', label: 'Magazine Spread' },
-    intro: scribbldIntro,
+    intro: clockIntro,
   },
   {
     slug: 'magazine-spread',
@@ -219,6 +213,8 @@ export const projects: ProjectMeta[] = [
     slug: 'netherlands-postcards',
     title: 'Netherlands Postcards',
     shortTitle: 'Netherlands Postcards',
+    coverSlides: netherlandsPostcardAssets.map((c) => c.src),
+    slideIntervalMs: 10_000,
     next: { slug: 'elmers-glue-animation', label: 'Elmer’s Glue Animation' },
     intro: postcardIntro,
   },
@@ -226,6 +222,7 @@ export const projects: ProjectMeta[] = [
     slug: 'elmers-glue-animation',
     title: 'Elmer’s Glue Animation',
     shortTitle: 'Elmer’s Glue Animation',
+    coverVideo: '/glue-animation.mp4',
     next: { slug: 'hot-sauce-bottles', label: 'Hot Sauce Bottles' },
     intro: glueIntro,
   },
@@ -233,6 +230,13 @@ export const projects: ProjectMeta[] = [
     slug: 'hot-sauce-bottles',
     title: 'Hot Sauce Bottles',
     shortTitle: 'Hot Sauce Bottles',
+    coverSlides: [
+      '/images/work/hot-sauce-wtf-label.png',
+      '/images/work/hot-sauce-los-labels.png',
+      '/images/work/hot-sauce-los-bottle.png',
+      '/images/work/hot-sauce-wtf-bottle.png',
+    ],
+    slideIntervalMs: 10_000,
     next: { slug: 'backseat-lovers-album-cover', label: 'Backseat Lovers Album Cover' },
     intro: hotSauceIntro,
   },

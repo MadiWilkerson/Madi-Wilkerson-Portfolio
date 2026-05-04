@@ -8,7 +8,6 @@ const slugs: ProjectSlug[] = [
   'monster-icons',
   'gamer-audience-staged-photo',
   'van-gogh-clock',
-  'scribbld',
   'magazine-spread',
   'editorial-illustration',
   'bodoni-type-specimin-poster',

@@ -1,12 +1,10 @@
 import { figma } from '../figmaAssets'
-import type { ProjectSlug } from '../data/projects'
+import { netherlandsPostcardAssets, type ProjectSlug } from '../data/projects'
 import styles from './ProjectContent.module.css'
 
 type Props = {
   slug: ProjectSlug
 }
-
-const WINDMILL_MOTION_GIF = '/images/postcards/windmill-motion.gif'
 
 /** Optional stills: export from Figma to `public/images/glue/` with these filenames. */
 const GLUE_OPTIONAL_STILLS: { file: string; alt: string }[] = [
@@ -82,23 +80,6 @@ export function ProjectContent({ slug }: Props) {
           </div>
         </div>
       )
-    case 'scribbld':
-      return (
-        <div className={styles.block}>
-          <p className={styles.placeholderNote}>
-            SCRIBBLD mockups in Figma are still placeholder frames—add exported screens to{' '}
-            <code>public/images/scribbld/</code> (e.g. <code>screen-a.png</code>,{' '}
-            <code>screen-b.png</code>, <code>flow.png</code>) when you have final art.
-          </p>
-          <div className={styles.pair}>
-            <div className={styles.placeholder} role="img" aria-label="App mockup placeholder" />
-            <div className={styles.placeholder} role="img" aria-label="App mockup placeholder" />
-          </div>
-          <div className={styles.wideShort}>
-            <div className={styles.placeholder} role="img" aria-label="App flow placeholder" />
-          </div>
-        </div>
-      )
     case 'magazine-spread':
       return (
         <div className={styles.block}>
@@ -158,35 +139,9 @@ export function ProjectContent({ slug }: Props) {
     case 'netherlands-postcards':
       return (
         <div className={styles.postcardsGrid}>
-          {[
-            { src: figma.postcards.amstel, label: 'Amstel River' },
-            { src: figma.postcards.gingerbread, label: 'Gingerbread Houses' },
-            { src: figma.postcards.vangogh, label: 'Van Gogh Museum' },
-            { src: figma.postcards.tulips, label: 'Bollenstreek' },
-            { src: figma.postcards.windmill, label: 'Windmills' },
-            {
-              src: figma.postcards.windmillMotion,
-              label: 'Windmills (motion study)',
-              motionGif: true,
-            },
-          ].map((card, i) => (
-            <figure key={i} className={styles.postcardCard}>
-              {'motionGif' in card && card.motionGif ? (
-                <img
-                  src={WINDMILL_MOTION_GIF}
-                  alt=""
-                  className={styles.postcardImg}
-                  loading="eager"
-                  decoding="async"
-                  onError={(e) => {
-                    const el = e.currentTarget
-                    el.src = card.src
-                    el.onerror = null
-                  }}
-                />
-              ) : (
-                <img src={card.src} alt="" className={styles.postcardImg} />
-              )}
+          {netherlandsPostcardAssets.map((card) => (
+            <figure key={card.src} className={styles.postcardCard}>
+              <img src={card.src} alt="" className={styles.postcardImg} />
               <figcaption className={styles.caption}>{card.label}</figcaption>
             </figure>
           ))}

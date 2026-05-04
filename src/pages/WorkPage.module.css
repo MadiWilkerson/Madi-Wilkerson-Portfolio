@@ -1,5 +1,6 @@
 .page {
   background: var(--color-page-bg);
+  overflow-x: hidden;
 }
 
 .section {
@@ -26,6 +27,14 @@
   min-width: 0;
 }
 
+/* Full viewport width breakout (glue video row). */
+.itemFullBleed {
+  grid-column: 1 / -1;
+  width: 100vw;
+  max-width: none;
+  margin-inline: calc(50% - 50vw);
+}
+
 .card {
   position: relative;
   display: flex;
@@ -34,6 +43,10 @@
   color: var(--color-text);
   border-radius: 4px;
   outline: none;
+}
+
+.cardGlue {
+  gap: 0.5rem;
 }
 
 .card:hover,
@@ -53,6 +66,30 @@
   overflow: visible;
 }
 
+.thumbRotator {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbSlide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.65s ease;
+  z-index: 0;
+}
+
+.thumbSlideActive {
+  opacity: 1;
+  z-index: 1;
+}
+
 .placeholder {
   display: block;
   width: 100%;
@@ -67,6 +104,26 @@
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.thumbWrapGlue {
+  aspect-ratio: unset;
+  min-height: min(92dvh, 100vw);
+  width: 100%;
+  background: #0b0f12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+}
+
+.workVideo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 100vw);
+  max-height: min(92dvh, 92vh);
+  object-fit: contain;
 }
 
 .popover {
@@ -88,7 +145,7 @@
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.18s ease, visibility 0.18s ease;
-  z-index: 1;
+  z-index: 3;
   overflow: visible;
 }
 
@@ -116,6 +173,12 @@
   font-size: clamp(0.56rem, 0.82vw, 0.66rem);
   font-weight: 400;
   line-height: 1.25;
+}
+
+.labelGlue {
+  text-align: center;
+  align-self: center;
+  padding: 0 var(--page-padding-x);
 }
 
 /* Underline grows to match title text width only; shown when hovering anywhere on the card. */
@@ -151,6 +214,10 @@
   }
 
   .popover {
+    transition-duration: 0.01ms;
+  }
+
+  .thumbSlide {
     transition-duration: 0.01ms;
   }
 }
