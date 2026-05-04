@@ -66,25 +66,13 @@ export function WorkPage() {
       <section className={styles.section} aria-label="Selected work">
         <ul className={styles.grid}>
           {projects.map((project) => {
-            const isGlue = Boolean(project.coverVideo)
-
-            const itemClass =
-              `${styles.item} ${isGlue ? styles.itemFullBleed : ''}`.trim()
-
-            const cardClass = `${styles.card} ${isGlue ? styles.cardGlue : ''}`.trim()
-
-            const thumbClass =
-              `${styles.thumbWrap} ${isGlue ? styles.thumbWrapGlue : ''}`.trim()
-
-            const labelClass = `${styles.label} ${isGlue ? styles.labelGlue : ''}`.trim()
-
             const slideList = project.coverSlides?.filter(Boolean) ?? []
 
             let thumbInner: ReactNode
             if (project.coverVideo) {
               thumbInner = (
                 <video
-                  className={styles.workVideo}
+                  className={styles.thumb}
                   muted
                   autoPlay
                   loop
@@ -107,21 +95,18 @@ export function WorkPage() {
               thumbInner = <span className={styles.placeholder} aria-hidden />
             }
 
-            const mediaShellClass =
-              `${styles.thumbMedia} ${isGlue ? styles.thumbMediaGlue : ''}`.trim()
-
             return (
-              <li key={project.slug} className={itemClass}>
-                <div className={cardClass} tabIndex={0}>
-                  <div className={thumbClass}>
-                    <div className={mediaShellClass}>
+              <li key={project.slug} className={styles.item}>
+                <div className={styles.card} tabIndex={0}>
+                  <div className={styles.thumbWrap}>
+                    <div className={styles.thumbMedia}>
                       {thumbInner}
                       <div className={styles.popover} role="tooltip">
                         <div className={styles.popoverBody}>{project.intro}</div>
                       </div>
                     </div>
                   </div>
-                  <p className={labelClass}>
+                  <p className={styles.label}>
                     <span className={styles.titleMark}>{project.title}</span>
                   </p>
                 </div>

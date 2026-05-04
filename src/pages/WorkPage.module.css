@@ -13,32 +13,37 @@
 }
 
 .grid {
+  --work-masonry-gap: clamp(1rem, 2.25vw, 1.35rem);
+
   list-style: none;
   margin: 0;
   padding: 0;
   width: 100%;
-  /* Masonry-style flow: column count follows viewport from ideal tile width. */
-  column-width: clamp(11.5rem, 26vw, 16rem);
-  column-gap: clamp(0.75rem, 2vw, 1.25rem);
+  column-count: 1;
+  column-gap: var(--work-masonry-gap);
   column-fill: balance;
 }
 
+@media (min-width: 36rem) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 60rem) {
+  .grid {
+    column-count: 3;
+  }
+}
+
 .item {
-  margin: 0 0 clamp(0.75rem, 2vw, 1.25rem);
+  margin: 0 0 var(--work-masonry-gap);
   min-width: 0;
   width: 100%;
   box-sizing: border-box;
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-}
-
-/* Full viewport width breakout (glue video strip). */
-.itemFullBleed {
-  column-span: all;
-  width: 100vw;
-  max-width: none;
-  margin-inline: calc(50% - 50vw);
 }
 
 .card {
@@ -49,10 +54,6 @@
   color: var(--color-text);
   border-radius: 4px;
   outline: none;
-}
-
-.cardGlue {
-  gap: 0.5rem;
 }
 
 .card:hover,
@@ -75,11 +76,6 @@
 .thumbMedia {
   position: relative;
   width: 100%;
-}
-
-.thumbMediaGlue {
-  width: fit-content;
-  max-width: 100%;
 }
 
 .thumbRotator {
@@ -126,35 +122,8 @@
   border-radius: 4px;
 }
 
-.thumbWrapGlue {
-  aspect-ratio: unset;
-  min-height: min(92dvh, 100vw);
-  width: 100%;
-  background: #0b0f12;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.thumbWrapGlue .popover {
-  border-radius: 0;
-}
-
-.thumbWrapGlue .thumb,
-.thumbWrapGlue .thumbRotator,
-.thumbWrapGlue .placeholder {
-  border-radius: 0;
-}
-
-.workVideo {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: min(100%, 100vw);
-  max-height: min(92dvh, 92vh);
-  object-fit: contain;
+video.thumb {
+  background: transparent;
 }
 
 .popover {
@@ -201,12 +170,6 @@
   font-size: clamp(0.56rem, 0.82vw, 0.66rem);
   font-weight: 400;
   line-height: 1.25;
-}
-
-.labelGlue {
-  text-align: center;
-  align-self: center;
-  padding: 0 var(--page-padding-x);
 }
 
 /* Underline grows to match title text width only; shown when hovering anywhere on the card. */
