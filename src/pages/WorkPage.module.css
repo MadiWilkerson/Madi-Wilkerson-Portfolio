@@ -15,9 +15,10 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 17rem));
   gap: clamp(1rem, 2.5vw, 1.75rem);
   align-items: start;
+  justify-content: start;
 }
 
 .item {
@@ -117,12 +118,38 @@
   line-height: 1.25;
 }
 
-/* Keyboard: show title underline while the project card is focused. */
-.card:focus-within .label :global(.hover-underline-ltr)::after {
+/* Underline grows to match title text width only; shown when hovering anywhere on the card. */
+.titleMark {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.titleMark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.06em;
+  width: 100%;
+  height: max(2px, 0.06em);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.42s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.card:hover .titleMark::after,
+.card:focus-within .titleMark::after {
   transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .titleMark::after {
+    transition-duration: 0.01ms;
+  }
+
   .popover {
     transition-duration: 0.01ms;
   }

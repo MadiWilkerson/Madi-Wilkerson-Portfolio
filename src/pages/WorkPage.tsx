@@ -20,7 +20,7 @@ export function WorkPage() {
                   </div>
                 </div>
                 <p className={styles.label}>
-                  <span className="hover-underline-ltr">{project.title}</span>
+                  <span className={styles.titleMark}>{project.title}</span>
                 </p>
               </div>
             </li>
