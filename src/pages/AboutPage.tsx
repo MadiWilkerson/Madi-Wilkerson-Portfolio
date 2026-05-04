@@ -20,29 +20,27 @@ export function AboutPage() {
           is to work alongside wildlife conservation as a graphic designer, I also enjoy taking care
           of my pets and other forms of art such as ceramics, painting, and card making.
         </p>
-        <ul className={styles.links}>
-          <li>
-            <a href="mailto:mrwilkerson937@gmail.com">mrwilkerson937@gmail.com</a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/madison-wilkerson-40299a272/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/madi.wilkerson.design/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              Instagram
-            </a>
-          </li>
-        </ul>
+        <div className={styles.contacts}>
+          <a href="mailto:mrwilkerson937@gmail.com" className={styles.contact}>
+            mrwilkerson937@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/madison-wilkerson-40299a272/"
+            className={styles.contact}
+            rel="noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/madi.wilkerson.design/"
+            className={styles.contact}
+            rel="noreferrer"
+            target="_blank"
+          >
+            Instagram
+          </a>
+        </div>
       </div>
     </div>
   )

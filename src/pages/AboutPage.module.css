@@ -3,7 +3,7 @@
 }
 
 .inner {
-  max-width: min(640px, 100%);
+  max-width: min(var(--layout-max), 100%);
   margin: 0 auto;
   padding: clamp(1.25rem, 3vw, 2rem) var(--page-padding-x)
     clamp(2.5rem, 6vw, 4rem);
@@ -47,27 +47,59 @@
   line-height: 1.45;
   color: var(--color-text);
   text-align: left;
+  max-width: none;
+  width: 100%;
 }
 
-.links {
-  list-style: none;
-  margin: clamp(0.25rem, 1vw, 0.75rem) 0 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  font-size: clamp(1rem, 1.65vw, 1.0625rem);
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.5rem, 2vw, 1.25rem);
+  margin-top: clamp(0.35rem, 1.5vw, 0.85rem);
+  width: 100%;
+  align-items: start;
+}
+
+.contact {
+  font-size: clamp(0.7rem, 1.05vw, 0.8125rem);
   font-weight: 400;
-}
-
-.links a {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+  line-height: 1.35;
   color: var(--color-text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
-.links a:hover,
-.links a:focus-visible {
-  opacity: 0.85;
+.contact:nth-child(1) {
+  text-align: left;
+  justify-self: start;
+}
+
+.contact:nth-child(2) {
+  text-align: center;
+  justify-self: center;
+}
+
+.contact:nth-child(3) {
+  text-align: right;
+  justify-self: end;
+}
+
+.contact:hover,
+.contact:focus-visible {
+  opacity: 0.82;
   outline: none;
+}
+
+@media (max-width: 520px) {
+  .contacts {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .contact:nth-child(1),
+  .contact:nth-child(2),
+  .contact:nth-child(3) {
+    text-align: left;
+    justify-self: stretch;
+  }
 }

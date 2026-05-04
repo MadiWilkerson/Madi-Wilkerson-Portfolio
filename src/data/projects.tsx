@@ -130,12 +130,3 @@ export const projects: ProjectMeta[] = [
 export const projectBySlug = Object.fromEntries(
   projects.map((p) => [p.slug, p])
 ) as Record<ProjectSlug, ProjectMeta>
-
-export const homeGrid = [
-  { slug: 'van-gogh-clock' as const, label: 'Van Gogh Clock' },
-  { slug: 'scribbld' as const, label: 'SCRIBBLD' },
-  { slug: 'magazine-spread' as const, label: 'Magazine Spread' },
-  { slug: 'netherlands-postcards' as const, label: 'Netherlands Postcards' },
-  { slug: 'elmers-glue-animation' as const, label: 'Elmer’s Glue Animation' },
-  { slug: 'hot-sauce-bottles' as const, label: 'Hot Sauce Bottles' },
-]

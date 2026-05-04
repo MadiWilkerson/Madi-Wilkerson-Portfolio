@@ -1,21 +1,22 @@
-import { Link } from 'react-router-dom'
-import { homeGrid } from '../data/projects'
+import { projects } from '../data/projects'
 import styles from './WorkPage.module.css'
 
 export function WorkPage() {
   return (
     <div className={styles.page}>
-      <section className={styles.section} aria-labelledby="work-heading">
-        <h1 id="work-heading" className={styles.title}>
-          Work
-        </h1>
+      <section className={styles.section} aria-label="Selected work">
         <ul className={styles.grid}>
-          {homeGrid.map((item) => (
-            <li key={item.slug}>
-              <Link to={`/project/${item.slug}`} className={styles.tile}>
-                <span className={styles.placeholder} aria-hidden />
-                <span className={styles.label}>{item.label}</span>
-              </Link>
+          {projects.map((project) => (
+            <li key={project.slug} className={styles.item}>
+              <div className={styles.card} tabIndex={0}>
+                <div className={styles.thumbWrap}>
+                  <span className={styles.placeholder} aria-hidden />
+                  <div className={styles.popover} role="tooltip">
+                    <div className={styles.popoverBody}>{project.intro}</div>
+                  </div>
+                </div>
+                <p className={styles.label}>{project.title}</p>
+              </div>
             </li>
           ))}
         </ul>
