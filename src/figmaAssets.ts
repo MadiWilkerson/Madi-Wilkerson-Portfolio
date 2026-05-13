@@ -6,8 +6,8 @@
 export const figma = {
   logoHome: 'https://www.figma.com/api/mcp/asset/d90d8292-30d0-4dbb-bab0-336e6e5712a2',
   logoHeader: 'https://www.figma.com/api/mcp/asset/388cae66-b759-42e3-9ae3-6aca9e59270f',
-  aboutPhoto:
-    'https://www.figma.com/api/mcp/asset/080019f3-b80e-4567-9588-30585c7737d7',
+  /** Self-hosted: Figma MCP CDN URLs expire (~days). Re-export from Figma to this path if you replace the image. */
+  aboutPhoto: '/images/about/madi-wilkerson.png',
   iconEmail: 'https://www.figma.com/api/mcp/asset/5cfb5572-e7b5-49e5-a21a-aa244e5975e3',
   iconLinkedin: 'https://www.figma.com/api/mcp/asset/066ae891-7891-433b-9cda-bc4e02cb988e',
   iconInstagram: 'https://www.figma.com/api/mcp/asset/487cb446-0d5f-4735-ac72-0aa34f3adde6',
